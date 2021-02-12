@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>600</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Sanguosha</string>
   </property>
   <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
@@ -19,17 +19,18 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
-     <height>23</height>
+     <width>600</width>
+     <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuGamen">
+   <widget class="QMenu" name="menuGame">
     <property name="title">
      <string>Game</string>
     </property>
     <addaction name="actionStart_Game"/>
+    <addaction name="actionStart_server"/>
    </widget>
-   <addaction name="menuGamen"/>
+   <addaction name="menuGame"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -43,6 +44,14 @@
   <action name="actionStart_Game">
    <property name="text">
     <string>Start game</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+G</string>
+   </property>
+  </action>
+  <action name="actionStart_server">
+   <property name="text">
+    <string>Start server</string>
    </property>
   </action>
  </widget>
