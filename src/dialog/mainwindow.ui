@@ -20,7 +20,7 @@
      <x>0</x>
      <y>0</y>
      <width>600</width>
-     <height>21</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuGame">
@@ -30,7 +30,37 @@
     <addaction name="actionStart_Game"/>
     <addaction name="actionStart_server"/>
    </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuCheat">
+    <property name="title">
+     <string>Cheat</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuDIY">
+    <property name="title">
+     <string>DIY</string>
+    </property>
+   </widget>
    <addaction name="menuGame"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuView"/>
+   <addaction name="menuCheat"/>
+   <addaction name="menuDIY"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -52,6 +82,9 @@
   <action name="actionStart_server">
    <property name="text">
     <string>Start server</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+S</string>
    </property>
   </action>
  </widget>
