@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = untitled
+TARGET = Qsanguosha
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -25,12 +25,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         src/main.cpp \
-        src/dialog/mainwindow.cpp
+        src/dialog/mainwindow.cpp \
+    src/ui/startscene.cpp \
+
 
 HEADERS += \
-        src/dialog/mainwindow.h
+        src/dialog/mainwindow.h \
+    src/ui/startscene.h \
+
 
 FORMS += \
         src/dialog/mainwindow.ui
 
 INCLUDEPATH += src/dialog
+INCLUDEPATH += src/ui
+INCLUDEPATH += src/server
