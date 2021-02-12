@@ -27,13 +27,16 @@ SOURCES += \
         src/main.cpp \
         src/dialog/mainwindow.cpp \
     src/ui/startscene.cpp \
-    src/dialog/flatdialog.cpp
+    src/dialog/flatdialog.cpp \
+    src/core/util.cpp
 
 
 HEADERS += \
         src/dialog/mainwindow.h \
     src/ui/startscene.h \
-    src/dialog/flatdialog.h
+    src/dialog/flatdialog.h \
+    src/core/util.h \
+    src/core/util.h
 
 
 FORMS += \
