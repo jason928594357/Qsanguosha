@@ -29,9 +29,27 @@ public:
 protected slots:
     void processMessage(const QByteArray &message);
 protected:
+    void checkVersion(const QVariant &server_version);
+    void forwardLobbyMessage(const QVariant &message);
+    void replyServerName(const QByteArray &, const QHostAddress &from, ushort port);
+    void replyPlayerNum(const QByteArray &, const QHostAddress &from, ushort port);
+
     Role role;
     AbstractServerSocket *server;
     AbstractClientSocket *lobby;
+
+    typedef void (Server::*LobbyFunction)(const QVariant &);
+    static QHash<QSanProtocol::CommandType, LobbyFunction> lobbyFunctions;
+
+    typedef void (Server::*RoomFunction)(AbstractClientSocket *socket, const QVariant &);
+    static QHash<QSanProtocol::CommandType, RoomFunction> roomFunctions;
+
+    typedef void (Server::*ServiceFunction)(const QByteArray &, const QHostAddress &, ushort);
+    static QHash<QSanProtocol::ServiceType, ServiceFunction> serviceFunctions;
+
+private:
+    void initLobbyFunctions();
+    void initRoomFunctions();
 };
 
 #endif // SERVER_H

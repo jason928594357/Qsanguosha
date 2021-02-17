@@ -43,7 +43,8 @@ SOURCES += \
     src/ui/startscene.cpp \
     src/ui/stylehelper.cpp \
     src/util/clientsocket.cpp \
-    src/util/serversocket.cpp
+    src/util/serversocket.cpp \
+    src/client/client.cpp
 
 HEADERS += \
     src/core/engine.h \
@@ -64,7 +65,8 @@ HEADERS += \
     src/util/abstractclientsocket.h \
     src/util/abstractserversocket.h \
     src/util/clientsocket.h \
-    src/util/serversocket.h
+    src/util/serversocket.h \
+    src/client/client.h
 
 FORMS += \
     src/dialog/connectiondialog.ui \
