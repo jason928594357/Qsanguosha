@@ -28,16 +28,19 @@ SOURCES += \
     src/dialog/mainwindow.cpp \
     src/ui/startscene.cpp \
     src/core/util.cpp \
-    src/dialog/flatdialog.cpp
+    src/dialog/flatdialog.cpp \
+    src/dialog/connectiondialog.cpp
 
 HEADERS += \
     src/dialog/mainwindow.h \
     src/ui/startscene.h \
     src/dialog/flatdialog.h \
     src/core/util.h \
+    src/dialog/connectiondialog.h
 
 FORMS += \
     src/dialog/mainwindow.ui \
+    src/dialog/connectiondialog.ui
 
 INCLUDEPATH += src/dialog
 INCLUDEPATH += src/ui
