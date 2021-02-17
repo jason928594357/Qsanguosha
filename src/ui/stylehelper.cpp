@@ -3,6 +3,7 @@
 #include "util.h"
 
 #include <QApplication>
+#include <QFontDatabase>
 #include <QPushButton>
 #include <QTextStream>
 
@@ -26,7 +27,17 @@ StyleHelper *StyleHelper::getInstance(){
 }
 
 QFont StyleHelper::getFontByFileName(const QString &fileName){
-
+    static QMap<QString, QFont> loadedFonts;
+    if(loadedFonts.contains(fileName)){
+        return loadedFonts.value(fileName);
+    } else {
+        int fontId = QFontDatabase::addApplicationFont("font/" + fileName);
+        Q_ASSERT(fontId != -1);
+        QString fontName = QFontDatabase::applicationFontFamilies(fontId).at(0);
+        QFont font(fontName);
+        loadedFonts[fileName] = font;
+        return font;
+    }
 }
 
 QString StyleHelper::styleSheetOfScrollBar(){
