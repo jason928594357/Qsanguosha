@@ -19,6 +19,8 @@ public:
 
 private:
     Ui::ConnectionDialog *ui;
+private slots:
+
 };
 
 #endif // CONNECTIONDIALOG_H

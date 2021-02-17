@@ -1,6 +1,7 @@
 #include "connectiondialog.h"
 #include "ui_connectiondialog.h"
 
+
 ConnectionDialog::ConnectionDialog(QWidget *parent) :
     FlatDialog(parent,false),
     ui(new Ui::ConnectionDialog)
@@ -12,3 +13,4 @@ ConnectionDialog::~ConnectionDialog()
 {
     delete ui;
 }
+
