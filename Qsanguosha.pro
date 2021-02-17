@@ -24,25 +24,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        src/main.cpp \
-        src/dialog/mainwindow.cpp \
+    src/main.cpp \
+    src/dialog/mainwindow.cpp \
     src/ui/startscene.cpp \
-    src/dialog/flatdialog.cpp \
     src/core/util.cpp \
-
-
+    src/dialog/flatdialog.cpp
 
 HEADERS += \
-        src/dialog/mainwindow.h \
+    src/dialog/mainwindow.h \
     src/ui/startscene.h \
     src/dialog/flatdialog.h \
     src/core/util.h \
 
-
-
 FORMS += \
-        src/dialog/mainwindow.ui \
-
+    src/dialog/mainwindow.ui \
 
 INCLUDEPATH += src/dialog
 INCLUDEPATH += src/ui
