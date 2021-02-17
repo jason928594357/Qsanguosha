@@ -19,6 +19,7 @@ public:
 
 private:
     Ui::ConnectionDialog *ui;
+
 private slots:
 
 };

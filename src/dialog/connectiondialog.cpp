@@ -14,3 +14,4 @@ ConnectionDialog::~ConnectionDialog()
     delete ui;
 }
 
+
