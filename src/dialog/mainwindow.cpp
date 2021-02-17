@@ -4,6 +4,10 @@
 #include "connectiondialog.h"
 #include "server.h"
 
+#include <stdio.h>
+#include <QVBoxLayout>
+#include <QLabel>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -16,9 +20,13 @@ MainWindow::MainWindow(QWidget *parent) :
     StartScene *start_scene = new StartScene(this);
     QList<QAction *> actions;
     actions << ui -> actionStart_Game
-            << ui -> actionStart_server;
+            << ui -> actionStart_Server;
     foreach(QAction *action,actions)
         start_scene ->addButton(action);
+}
+
+void MainWindow::on_actionStart_Server_triggered(){
+    printf("Hello World!");
 }
 
 void MainWindow::startConnection(){
@@ -33,9 +41,14 @@ MainWindow::~MainWindow()
 BroadcastBox::BroadcastBox(Server *server,QWidget *parent)
     :QDialog(parent), server(server){
     setWindowTitle(tr("Broadcast"));
+    QVBoxLayout *layout = new QVBoxLayout;
+    layout->addWidget(new QLabel(tr("Please input the message to broadcast")));
+
+    text_edit = new QTextEdit;
+    layout->addWidget(text_edit);
 }
 
 void BroadcastBox::accept() {
     QDialog::accept();
-    //server->broadcastSystemMessage(text_edit->toPlainText());
+    server->broadcastSystemMessage(text_edit->toPlainText());
 }

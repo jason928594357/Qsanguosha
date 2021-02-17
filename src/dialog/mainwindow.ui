@@ -28,7 +28,7 @@
      <string>Game</string>
     </property>
     <addaction name="actionStart_Game"/>
-    <addaction name="actionStart_server"/>
+	<addaction name="actionStart_Server"/>
    </widget>
    <widget class="QMenu" name="menuTools">
     <property name="title">
@@ -79,9 +79,12 @@
     <string>Alt+G</string>
    </property>
   </action>
-  <action name="actionStart_server">
+  <action name="actionStart_Server">
    <property name="text">
-    <string>Start server</string>
+    <string>Start Server</string>
+   </property>
+   <property name="toolTip">
+    <string>Start Server</string>
    </property>
    <property name="shortcut">
     <string>Alt+S</string>

@@ -3,8 +3,7 @@
 
 #include <QMainWindow>
 #include <QDialog>
-
-
+#include <QTextEdit>
 
 namespace Ui {
     class MainWindow;
@@ -42,6 +41,9 @@ private:
 
 public slots:
     void startConnection();
+
+private slots:
+    void on_actionStart_Server_triggered();
 };
 
 #endif // MAINWINDOW_H
