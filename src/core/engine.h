@@ -28,11 +28,13 @@ public:
     QString translate(const QString &toTranslate, const QString &defaultValue) const;
 
     lua_State *getLuaState() const;
+    void addBanPackage(const QString &package_name);
+
     GeneralList getGeneralList() const;
 private:
     QHash<QString, QString> translations;
     GeneralList generalList;
-
+    QSet<QString> ban_package;
     lua_State *lua;
 };
 

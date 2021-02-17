@@ -10,6 +10,10 @@ Engine::Engine(){
     Sanguosha = this;
 }
 
+void Engine::addBanPackage(const QString &package_name) {
+    ban_package.insert(package_name);
+}
+
 QString Engine::translate(const QString &toTranslate) const{
     QStringList list = toTranslate.split("\\");
     QString res;
