@@ -30,7 +30,11 @@ SOURCES += \
     src/dialog/connectiondialog.cpp \
     src/core/util.cpp \
     src/ui/startscene.cpp \
-    src/core/settings.cpp
+    src/core/settings.cpp \
+    src/core/engine.cpp \
+    src/core/general.cpp \
+    src/dialog/avatarmodel.cpp \
+    src/ui/skinbank.cpp
 
 HEADERS += \
     src/dialog/mainwindow.h \
@@ -38,7 +42,11 @@ HEADERS += \
     src/dialog/connectiondialog.h \
     src/core/util.h \
     src/ui/startscene.h \
-    src/core/settings.h
+    src/core/settings.h \
+    src/core/engine.h \
+    src/core/general.h \
+    src/dialog/avatarmodel.h \
+    src/ui/skinbank.h
 
 FORMS += \
     src/dialog/mainwindow.ui \
@@ -47,3 +55,4 @@ FORMS += \
 INCLUDEPATH += src/dialog
 INCLUDEPATH += src/ui
 INCLUDEPATH += src/server
+INCLUDEPATH += src/core

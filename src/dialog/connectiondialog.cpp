@@ -1,6 +1,8 @@
 #include "connectiondialog.h"
 #include "ui_connectiondialog.h"
 #include "settings.h"
+#include "engine.h"
+#include "avatarmodel.h"
 
 #include <QMessageBox>
 #include <QScrollBar>
@@ -37,7 +39,16 @@ void ConnectionDialog::showAvatarList(){
     }
 
     if(ui->avatarList->model() == NULL){
-//        QList<const General *> generals = Sanguosha->getGeneralList();
+        QList<const General *> generals = Sanguosha->getGeneralList();
+        QMutableListIterator<const General *> itor = generals;
+        while (itor.hasNext()) {
+            if (itor.next()->isTotallyHidden()){
+                itor.remove();
+            }
+        }
+        AvatarModel *model = new AvatarModel(generals);
+        model->setParent(this);
+        ui->avatarList->setModel(model);
     }
     ui->avatarList->show();
 }
