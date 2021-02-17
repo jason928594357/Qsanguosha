@@ -26,17 +26,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     src/main.cpp \
     src/dialog/mainwindow.cpp \
-    src/ui/startscene.cpp \
-    src/core/util.cpp \
     src/dialog/flatdialog.cpp \
-    src/dialog/connectiondialog.cpp
+    src/dialog/connectiondialog.cpp \
+    src/core/util.cpp \
+    src/ui/startscene.cpp
 
 HEADERS += \
     src/dialog/mainwindow.h \
-    src/ui/startscene.h \
     src/dialog/flatdialog.h \
+    src/dialog/connectiondialog.h \
     src/core/util.h \
-    src/dialog/connectiondialog.h
+    src/ui/startscene.h
 
 FORMS += \
     src/dialog/mainwindow.ui \
