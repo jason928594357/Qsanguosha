@@ -43,9 +43,100 @@
 	<property name="title">
 	<string>Connection setup</string>
 	</property>
-	
+	<widget class="QLabel" name="avatarLabel">
+		<property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>144</y>
+      <width>42</width>
+      <height>16</height>
+     </rect>
+    </property>
+	<property name="text">
+     <string>Avatar:</string>
+    </property>
+	</widget>
   </widget>
-  
+  <widget class="QLabel" name="avatarPixmap">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>163</y>
+      <width>114</width>
+      <height>136</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>100</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="changeAvatarButton">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>270</y>
+      <width>121</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Change avatar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="detectLANButton">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>150</y>
+      <width>121</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Detect LAN ...</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clearHistoryButton">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>190</y>
+      <width>121</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear history</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget1">
+	<property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>17</y>
+      <width>251</width>
+      <height>121</height>
+     </rect>
+    </property>
+	<layout class="QFormLayout" name="formLayout">
+	</layout>
+   </widget>
+   
  </widget>
  <pixmapfunction/>
  <connections/>
