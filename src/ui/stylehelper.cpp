@@ -4,6 +4,7 @@
 
 #include <QApplication>
 #include <QPushButton>
+#include <QTextStream>
 
 StyleHelper *StyleHelper::instance = NULL;
 
@@ -28,6 +29,18 @@ QFont StyleHelper::getFontByFileName(const QString &fileName){
 
 }
 
+QString StyleHelper::styleSheetOfScrollBar(){
+    static QString style;
+    if(style.isEmpty()){
+        QFile file("style-sheet/scroll.qss");
+        if(file.open(QIODevice::ReadOnly)){
+            QTextStream stream(&file);
+            style = stream.readAll();
+        }
+    }
+    return style;
+}
+
 QColor StyleHelper::backgroundColorOfFlatDialog()
 {
     static QColor color;
@@ -47,8 +60,7 @@ QColor StyleHelper::backgroundColorOfFlatDialog()
     return color;
 }
 
-void StyleHelper::setIcon(QPushButton* button, QChar iconId, int size)
-{
+void StyleHelper::setIcon(QPushButton* button, QChar iconId, int size) {
     iconFont.setPointSize(size);
     button->setFont(iconFont);
     button->setText(iconId);

@@ -3,6 +3,7 @@
 #include "settings.h"
 #include "engine.h"
 #include "avatarmodel.h"
+#include "stylehelper.h"
 
 #include <QMessageBox>
 #include <QScrollBar>
@@ -18,7 +19,7 @@ ConnectionDialog::ConnectionDialog(QWidget *parent) :
     ui->setupUi(this);
     connect(this, &ConnectionDialog::windowTitleChanged, ui->title, &QLabel::setText);
     QScrollBar *bar = ui->avatarList->verticalScrollBar();
-    //bar->setStyleSheet(StyleHelper::styleSheetOfScrollBar());
+    bar->setStyleSheet(StyleHelper::styleSheetOfScrollBar());
     resize(ShrinkWidth, height());
     ui->connectButton->setFocus();
 }
