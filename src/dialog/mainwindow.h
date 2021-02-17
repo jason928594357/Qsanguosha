@@ -6,7 +6,7 @@
 namespace Ui {
 class MainWindow;
 }
-class ConnectionDialog;
+//class ConnectionDialog;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -17,7 +17,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    ConnectionDialog *connection_dialog;
+    //ConnectionDialog *connection_dialog;
 };
 
 #endif // MAINWINDOW_H
