@@ -39,7 +39,11 @@ SOURCES += \
     src/ui/skinbank.cpp \
     src/ui/stylehelper.cpp \
     src/util/serversocket.cpp \
-    src/util/clientsocket.cpp
+    src/util/clientsocket.cpp \
+    src/core/json.cpp \
+    src/dialog/serverdialog.cpp \
+    src/server/serverroom.cpp \
+    src/core/protocol.cpp
 
 HEADERS += \
     src/dialog/mainwindow.h \
@@ -57,7 +61,10 @@ HEADERS += \
     src/util/abstractserversocket.h \
     src/util/serversocket.h \
     src/util/abstractclientsocket.h \
-    src/util/clientsocket.h
+    src/util/clientsocket.h \
+    src/core/json.h \
+    src/dialog/serverdialog.h \
+    src/core/protocol.h
 
 FORMS += \
     src/dialog/mainwindow.ui \

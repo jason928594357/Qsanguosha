@@ -2,6 +2,7 @@
 #define SERVER_H
 
 #include "abstractserversocket.h"
+#include "protocol.h"
 
 #include <QObject>
 #include <QHostAddress>
@@ -22,9 +23,15 @@ public:
     bool listen(const QHostAddress &address, ushort port) {
         return server->listen(address, port);
     }
+    void daemonize();
+    void connectToLobby();
+
+protected slots:
+    void processMessage(const QByteArray &message);
 protected:
     Role role;
     AbstractServerSocket *server;
+    AbstractClientSocket *lobby;
 };
 
 #endif // SERVER_H

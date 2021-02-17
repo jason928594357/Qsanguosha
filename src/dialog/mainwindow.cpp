@@ -3,10 +3,12 @@
 #include "startScene.h"
 #include "connectiondialog.h"
 #include "server.h"
+#include "serverdialog.h"
+#include "settings.h"
 
-#include <stdio.h>
 #include <QVBoxLayout>
 #include <QLabel>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -26,7 +28,24 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 
 void MainWindow::on_actionStart_Server_triggered(){
-    printf("Hello World!");
+    ServerDialog *dialog = new ServerDialog(this);
+    if(!dialog ->config()){
+        return;
+    }
+    server = new Server(this);
+    if (!server->listen(QHostAddress::Any, Config.ServerPort)) {
+        QMessageBox::warning(this, tr("Warning"), tr("Can not start server!"));
+        server->deleteLater();
+        server = NULL;
+        return;
+    }
+
+    if (Config.ConnectToLobby){
+        server->connectToLobby();
+    }
+    server->daemonize();
+
+    ui->actionStart_Game->disconnect();
 }
 
 void MainWindow::startConnection(){

@@ -37,7 +37,7 @@ public:
 private:
     Ui::MainWindow *ui;
     ConnectionDialog *connection_dialog;
-
+    Server *server;
 
 public slots:
     void startConnection();
