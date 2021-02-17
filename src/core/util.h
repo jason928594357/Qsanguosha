@@ -1,7 +1,9 @@
 #ifndef UTIL_H
 #define UTIL_H
 
+struct lua_State;
 class QVariant;
+
 #include <QList>
 #include <QStringList>
 #include <QVariant>
@@ -14,6 +16,8 @@ void qShuffle(QList<T> &list){
         list.swap(i,r);
     }
 }
+
+QVariant GetValueFromLuaState(lua_State *L, const char *table_name, const char *key);
 
 QStringList IntList2StringList(const QList<int> &intlist);
 QList<int> StringList2IntList(const QStringList &stringlist);

@@ -34,7 +34,8 @@ SOURCES += \
     src/core/engine.cpp \
     src/core/general.cpp \
     src/dialog/avatarmodel.cpp \
-    src/ui/skinbank.cpp
+    src/ui/skinbank.cpp \
+    src/ui/stylehelper.cpp
 
 HEADERS += \
     src/dialog/mainwindow.h \
@@ -46,7 +47,8 @@ HEADERS += \
     src/core/engine.h \
     src/core/general.h \
     src/dialog/avatarmodel.h \
-    src/ui/skinbank.h
+    src/ui/skinbank.h \
+    src/ui/stylehelper.h
 
 FORMS += \
     src/dialog/mainwindow.ui \

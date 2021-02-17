@@ -4,6 +4,13 @@
 #include <QStringList>
 #include <QMessageBox>
 
+extern "C" {
+    int luaopen_sgs(lua_State *);
+}
+
+QVariant GetValueFromLuaState(lua_State *L,const char *table_name,const char *key){
+
+}
 
 QStringList IntList2StringList(const QList<int> &intlist) {
     QStringList stringlist;

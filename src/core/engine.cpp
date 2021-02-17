@@ -22,6 +22,10 @@ GeneralList Engine::getGeneralList() const{
      return generalList;
 }
 
+lua_State *Engine::getLuaState() const{
+    return lua;
+}
+
 Engine::~Engine(){
 
 }
