@@ -22,8 +22,14 @@ void Server::broadcastSystemMessage(const QString &msg){
 
 void Server::daemonize(){
     daemon = new UdpSocket(this);
+    daemon ->bind(QHostAddress::Any,serverPort());
+    connect(daemon, &AbstractUdpSocket::newDatagram, this, &Server::processDatagram);
 }
 
 void Server::processMessage(const QByteArray &message){
+
+}
+
+void Server::processDatagram(const QByteArray &data, const QHostAddress &from, ushort port){
 
 }

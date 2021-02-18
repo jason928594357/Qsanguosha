@@ -27,9 +27,11 @@ public:
     }
     void daemonize();
     void connectToLobby();
+    ushort serverPort() const {return server->serverPort(); }
 
 protected slots:
     void processMessage(const QByteArray &message);
+    void processDatagram(const QByteArray &data, const QHostAddress &from, ushort port);
 protected:
     void checkVersion(const QVariant &server_version);
     void forwardLobbyMessage(const QVariant &message);
