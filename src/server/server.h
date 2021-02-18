@@ -7,6 +7,8 @@
 #include <QObject>
 #include <QHostAddress>
 
+class AbstractUdpSocket;
+
 class Server : public QObject{
     Q_OBJECT
 public:
@@ -46,7 +48,7 @@ protected:
 
     typedef void (Server::*ServiceFunction)(const QByteArray &, const QHostAddress &, ushort);
     static QHash<QSanProtocol::ServiceType, ServiceFunction> serviceFunctions;
-
+    AbstractUdpSocket *daemon;
 private:
     void initLobbyFunctions();
     void initRoomFunctions();

@@ -47,7 +47,8 @@ SOURCES += \
     src/client/client.cpp \
     src/core/roomstate.cpp \
     src/core/card.cpp \
-    src/core/wrappedcard.cpp
+    src/core/wrappedcard.cpp \
+    src/util/udpsocket.cpp
 
 HEADERS += \
     src/core/engine.h \
@@ -72,7 +73,9 @@ HEADERS += \
     src/client/client.h \
     src/core/roomstate.h \
     src/core/card.h \
-    src/core/wrappedcard.h
+    src/core/wrappedcard.h \
+    src/util/abstractudpsocket.h \
+    src/util/udpsocket.h
 
 FORMS += \
     src/dialog/connectiondialog.ui \

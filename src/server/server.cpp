@@ -1,5 +1,6 @@
 #include "server.h"
 #include "serversocket.h"
+#include "udpsocket.h"
 
 using namespace QSanProtocol;
 
@@ -20,7 +21,7 @@ void Server::broadcastSystemMessage(const QString &msg){
 }
 
 void Server::daemonize(){
-
+    daemon = new UdpSocket(this);
 }
 
 void Server::processMessage(const QByteArray &message){
