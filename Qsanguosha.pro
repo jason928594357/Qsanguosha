@@ -48,7 +48,10 @@ SOURCES += \
     src/core/roomstate.cpp \
     src/core/card.cpp \
     src/core/wrappedcard.cpp \
-    src/util/udpsocket.cpp
+    src/util/udpsocket.cpp \
+    src/dialog/configdialog.cpp \
+    src/dialog/cardoverview.cpp \
+    src/dialog/generaloverview.cpp
 
 HEADERS += \
     src/core/engine.h \
@@ -75,11 +78,17 @@ HEADERS += \
     src/core/card.h \
     src/core/wrappedcard.h \
     src/util/abstractudpsocket.h \
-    src/util/udpsocket.h
+    src/util/udpsocket.h \
+    src/dialog/configdialog.h \
+    src/dialog/cardoverview.h \
+    src/dialog/generaloverview.h
 
 FORMS += \
     src/dialog/connectiondialog.ui \
-    src/dialog/mainwindow.ui
+    src/dialog/mainwindow.ui \
+    src/dialog/configdialog.ui \
+    src/dialog/cardoverview.ui \
+    src/dialog/generaloverview.ui
 
 INCLUDEPATH += src/core
 INCLUDEPATH += src/dialog
