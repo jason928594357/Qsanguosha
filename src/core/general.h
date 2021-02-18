@@ -8,7 +8,12 @@ class General :public QObject{
 public:
     General();
     bool isTotallyHidden() const;
-
+    enum Gender {
+        Sexless,
+        Male,
+        Female,
+        Neuter
+    };
 
 private:
     bool never_shown;

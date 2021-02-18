@@ -51,7 +51,8 @@ SOURCES += \
     src/util/udpsocket.cpp \
     src/dialog/configdialog.cpp \
     src/dialog/cardoverview.cpp \
-    src/dialog/generaloverview.cpp
+    src/dialog/generaloverview.cpp \
+    src/core/player.cpp
 
 HEADERS += \
     src/core/engine.h \
@@ -81,7 +82,9 @@ HEADERS += \
     src/util/udpsocket.h \
     src/dialog/configdialog.h \
     src/dialog/cardoverview.h \
-    src/dialog/generaloverview.h
+    src/dialog/generaloverview.h \
+    src/core/namespace.h \
+    src/core/player.h
 
 FORMS += \
     src/dialog/connectiondialog.ui \
