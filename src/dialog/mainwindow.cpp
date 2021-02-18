@@ -6,10 +6,31 @@
 #include "serverdialog.h"
 #include "settings.h"
 #include "configdialog.h"
+#include "generaloverview.h"
 
+#include <QGraphicsView>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QMessageBox>
+
+class FitView: public QGraphicsView {
+public:
+    FitView(QGraphicsView *scene) :QGraphicsView(scene) {
+        setSceneRect(Config.Rect);
+        setRenderHints(QPainter::TextAntialiasing | QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+    }
+
+    virtual void mousePressEvent(QMouseEvent *event) {
+
+    }
+    virtual void mouseMoveEvent(QMouseEvent *event) {
+    }
+    virtual void mouseReleaseEvent(QMouseEvent *event) {
+    }
+    virtual void resizeEvent(QResizeEvent *event){
+
+    }
+};
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -26,9 +47,11 @@ MainWindow::MainWindow(QWidget *parent) :
     StartScene *start_scene = new StartScene(this);
     QList<QAction *> actions;
     actions << ui -> actionStart_Game
-            << ui -> actionStart_Server;
+            << ui -> actionStart_Server
+            << ui -> actionGeneral_Overview;
     foreach(QAction *action,actions)
         start_scene ->addButton(action);
+
 }
 
 void MainWindow::on_actionStart_Server_triggered(){
@@ -50,6 +73,12 @@ void MainWindow::on_actionStart_Server_triggered(){
     server->daemonize();
 
     ui->actionStart_Game->disconnect();
+}
+
+void MainWindow::on_actionGeneral_Overview_triggered(){
+    GeneralOverview *overview = GeneralOverview::getInstance(this);
+    overview->fillGenerals(Sanguosha->getGeneralList());
+    overview->show();
 }
 
 void MainWindow::startConnection(){

@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include "configdialog.h"
+#include "engine.h"
 
 #include <QMainWindow>
 #include <QDialog>
@@ -11,6 +12,8 @@ namespace Ui {
     class MainWindow;
 }
 
+class FitView;
+class QGraphicsScene;
 class Server;
 class QTextEdit;
 class ConnectionDialog;
@@ -37,6 +40,8 @@ public:
     ~MainWindow();
 
 private:
+    FitView *view;
+    QGraphicsScene *scene;
     Ui::MainWindow *ui;
     ConnectionDialog *connection_dialog;
     Server *server;
@@ -47,6 +52,7 @@ public slots:
 
 private slots:
     void on_actionStart_Server_triggered();
+    void on_actionGeneral_Overview_triggered();
 };
 
 #endif // MAINWINDOW_H

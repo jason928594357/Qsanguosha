@@ -17,6 +17,8 @@ class GeneralOverview : public FlatDialog
 public:
     GeneralOverview(QWidget *parent = 0);
     ~GeneralOverview();
+    void fillGenerals(const QList<const General *> &generals, bool init = true);
+    static GeneralOverview *getInstance(QWidget *main_window);
 
 private:
     Ui::GeneralOverview *ui;

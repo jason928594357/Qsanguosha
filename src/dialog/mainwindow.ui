@@ -34,6 +34,7 @@
     <property name="title">
      <string>Tools</string>
     </property>
+	<addaction name="actionGeneral_Overview"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -77,6 +78,14 @@
    </property>
    <property name="shortcut">
     <string>Alt+G</string>
+   </property>
+  </action>
+  <action name="actionGeneral_Overview">
+   <property name="text">
+    <string>General overview</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
    </property>
   </action>
   <action name="actionStart_Server">
