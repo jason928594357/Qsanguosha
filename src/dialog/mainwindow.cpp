@@ -5,6 +5,7 @@
 #include "server.h"
 #include "serverdialog.h"
 #include "settings.h"
+#include "configdialog.h"
 
 #include <QVBoxLayout>
 #include <QLabel>
@@ -19,6 +20,9 @@ MainWindow::MainWindow(QWidget *parent) :
     connection_dialog = new ConnectionDialog(this);
     connect(ui->actionStart_Game, &QAction::triggered, connection_dialog, &ConnectionDialog::exec);
     connect(connection_dialog, &ConnectionDialog::accepted, this, &MainWindow::startConnection);
+
+    config_dialog = new ConfigDialog(this);
+
     StartScene *start_scene = new StartScene(this);
     QList<QAction *> actions;
     actions << ui -> actionStart_Game

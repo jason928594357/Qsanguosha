@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "configdialog.h"
+
 #include <QMainWindow>
 #include <QDialog>
 #include <QTextEdit>
@@ -38,6 +40,7 @@ private:
     Ui::MainWindow *ui;
     ConnectionDialog *connection_dialog;
     Server *server;
+    ConfigDialog *config_dialog;
 
 public slots:
     void startConnection();
