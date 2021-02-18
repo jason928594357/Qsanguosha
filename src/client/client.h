@@ -2,6 +2,7 @@
 #define CLIENT_H
 
 #include "protocol.h"
+#include "roomstate.h"
 
 #include <QObject>
 
@@ -41,9 +42,13 @@ public:
     ~Client();
     void setStatus(Status status);
     Status getStatus() const;
+    bool m_isDiscardActionRefusable;
 
 protected:
-    Status status;
+    Status status;    
+    int alive_count;
+    int swap_pile;
+    RoomState _m_roomState;
 };
 
 #endif // CLIENT_H

@@ -44,7 +44,10 @@ SOURCES += \
     src/ui/stylehelper.cpp \
     src/util/clientsocket.cpp \
     src/util/serversocket.cpp \
-    src/client/client.cpp
+    src/client/client.cpp \
+    src/core/roomstate.cpp \
+    src/core/card.cpp \
+    src/core/wrappedcard.cpp
 
 HEADERS += \
     src/core/engine.h \
@@ -66,7 +69,10 @@ HEADERS += \
     src/util/abstractserversocket.h \
     src/util/clientsocket.h \
     src/util/serversocket.h \
-    src/client/client.h
+    src/client/client.h \
+    src/core/roomstate.h \
+    src/core/card.h \
+    src/core/wrappedcard.h
 
 FORMS += \
     src/dialog/connectiondialog.ui \
