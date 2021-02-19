@@ -26,7 +26,6 @@ SOURCES += \
     src/dialog/connectiondialog.cpp \
     src/dialog/flatdialog.cpp \
     src/dialog/mainwindow.cpp \
-    src/dialog/serverdialog.cpp \
     src/main.cpp \
     src/server/server.cpp \
     src/server/serverroom.cpp \
@@ -45,6 +44,13 @@ SOURCES += \
     src/dialog/generaloverview.cpp \
     src/core/player.cpp \
     src/package/package.cpp \
+    src/dialog/banlistdialog.cpp \
+    src/dialog/serverdialog.cpp \
+    src/dialog/customassigndialog.cpp \
+    src/scenario/scenario.cpp \
+    src/scenario/miniscenarios.cpp \
+    src/core/skill.cpp \
+    src/core/structs.cpp
 
 HEADERS += \
     src/core/engine.h \
@@ -57,7 +63,6 @@ HEADERS += \
     src/dialog/connectiondialog.h \
     src/dialog/flatdialog.h \
     src/dialog/mainwindow.h \
-    src/dialog/serverdialog.h \
     src/server/server.h \
     src/ui/skinbank.h \
     src/ui/startscene.h \
@@ -79,6 +84,13 @@ HEADERS += \
     src/core/player.h \
     src/package/package.h \
     src/core/audio.h \
+    src/dialog/banlistdialog.h \
+    src/dialog/serverdialog.h \
+    src/dialog/customassigndialog.h \
+    src/scenario/scenario.h \
+    src/scenario/miniscenarios.h \
+    src/core/skill.h \
+    src/core/structs.h
 
 FORMS += \
     src/dialog/connectiondialog.ui \
@@ -94,6 +106,7 @@ INCLUDEPATH += src/server
 INCLUDEPATH += src/ui
 INCLUDEPATH += src/util
 INCLUDEPATH += src/package
+INCLUDEPATH += src/scenario
 
 LIBS += -L.
 

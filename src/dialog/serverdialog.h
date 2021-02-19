@@ -7,6 +7,7 @@
 #include <QSpinBox>
 #include <QCheckBox>
 #include <QLabel>
+#include <QGroupBox>
 
 class QLineEdit;
 
@@ -17,6 +18,15 @@ public:
     bool config();
 
 private:
+    QWidget *createBasicTab();
+    QWidget *createPackageTab();
+    QWidget *createAdvancedTab();
+    QWidget *createConversionTab();
+    QWidget *createMiscTab();
+    QLayout *createButtonLayout();
+
+    QGroupBox *createGameModeBox();
+
     QLineEdit *server_name_edit;
     QSpinBox *timeout_spinbox;
     QCheckBox *nolimit_checkbox;
@@ -52,6 +62,10 @@ private:
     QCheckBox *convert_ds_to_dp;
     QCheckBox *convert_lord;
     QCheckBox *ai_chat_checkbox;
+private slots:
+    void onOkButtonClicked();
+    void onDetectButtonClicked();
+    void editBanlist();
 };
 
 #endif // SERVERDIALOG_H

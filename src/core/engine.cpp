@@ -33,3 +33,25 @@ lua_State *Engine::getLuaState() const{
 Engine::~Engine(){
 
 }
+
+QMap<QString, QString> Engine::getAvailableModes() const{
+    return modes;
+}
+
+
+QList<const Package *> Engine::getPackages() const{
+    return packages;
+}
+
+
+const Scenario *Engine::getScenario(const QString &name) const{
+    if(m_scenarios.contains(name)){
+        return m_scenarios[name];
+    } else if(m_miniScenes.contains(name)){
+        return m_miniScenes[name];
+    } else if(name == "custom_scenario"){
+        return m_customScene;
+    }else {
+        return NULL;
+    }
+}
