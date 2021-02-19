@@ -46,6 +46,8 @@ public:
     const QSanSkinScheme &getCurrentSkinScheme();
 
 protected:
+    QSanSkinFactory(const char *fileName);
+    static QSanSkinFactory* _sm_singleton;
     QSanSkinScheme _sm_currentSkin;
 };
 #define G_ROOM_SKIN (QSanSkinFactory::getInstance().getCurrentSkinScheme().getRoomSkin())

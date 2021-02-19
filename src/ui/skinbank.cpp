@@ -8,7 +8,16 @@ const char *IQSanComponentSkin::S_SKIN_KEY_DEFAULT = "default";
 const char *QSanRoomSkin::S_SKIN_KEY_GENERAL_CARD = "generalCard-%2-%1";
 const char *QSanRoomSkin::S_SKIN_KEY_PLAYER_GENERAL_ICON = "playerGeneralIcon-%3-%2-%1";
 
+QSanSkinFactory *QSanSkinFactory::_sm_singleton = NULL;
+
 QSanSkinFactory &QSanSkinFactory::getInstance(){
+    if(_sm_singleton == NULL){
+        _sm_singleton = new QSanSkinFactory("skins/skinList.json");
+    }
+    return *_sm_singleton;
+}
+
+QSanSkinFactory::QSanSkinFactory(const char *fileName){
 
 }
 
