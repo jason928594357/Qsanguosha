@@ -5,3 +5,8 @@ JsonDocument::JsonDocument()
 {
 
 }
+
+JsonDocument::JsonDocument(const QVariant &var)
+    :value(var), valid(true)
+{
+}

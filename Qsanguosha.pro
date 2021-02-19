@@ -52,7 +52,8 @@ SOURCES += \
     src/dialog/configdialog.cpp \
     src/dialog/cardoverview.cpp \
     src/dialog/generaloverview.cpp \
-    src/core/player.cpp
+    src/core/player.cpp \
+    src/package/package.cpp
 
 HEADERS += \
     src/core/engine.h \
@@ -84,7 +85,8 @@ HEADERS += \
     src/dialog/cardoverview.h \
     src/dialog/generaloverview.h \
     src/core/namespace.h \
-    src/core/player.h
+    src/core/player.h \
+    src/package/package.h
 
 FORMS += \
     src/dialog/connectiondialog.ui \
@@ -98,3 +100,4 @@ INCLUDEPATH += src/dialog
 INCLUDEPATH += src/server
 INCLUDEPATH += src/ui
 INCLUDEPATH += src/util
+INCLUDEPATH += src/package
