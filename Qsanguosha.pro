@@ -11,18 +11,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Qsanguosha
 TEMPLATE = app
+CONFIG += audio
 
-# The following define makes your compiler emit warnings if you use
-# any feature of Qt which as been marked as deprecated (the exact warnings
-# depend on your compiler). Please consult the documentation of the
-# deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
-
-# You can also make your code fail to compile if you use deprecated APIs.
-# In order to do so, uncomment the following line.
-# You can also select to disable deprecated APIs only up to a certain version of Qt.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
-
 
 SOURCES += \
     src/core/engine.cpp \
@@ -53,7 +44,7 @@ SOURCES += \
     src/dialog/cardoverview.cpp \
     src/dialog/generaloverview.cpp \
     src/core/player.cpp \
-    src/package/package.cpp
+    src/package/package.cpp \
 
 HEADERS += \
     src/core/engine.h \
@@ -86,7 +77,8 @@ HEADERS += \
     src/dialog/generaloverview.h \
     src/core/namespace.h \
     src/core/player.h \
-    src/package/package.h
+    src/package/package.h \
+    src/core/audio.h \
 
 FORMS += \
     src/dialog/connectiondialog.ui \
@@ -95,9 +87,21 @@ FORMS += \
     src/dialog/cardoverview.ui \
     src/dialog/generaloverview.ui
 
+INCLUDEPATH += include
 INCLUDEPATH += src/core
 INCLUDEPATH += src/dialog
 INCLUDEPATH += src/server
 INCLUDEPATH += src/ui
 INCLUDEPATH += src/util
 INCLUDEPATH += src/package
+
+LIBS += -L.
+
+CONFIG(audio){
+    DEFINES += AUDIO_SUPPORT
+    INCLUDEPATH += include/fmod
+    CONFIG(debug,debug|release): LIBS += -lfmodexL
+    else:LIBS += -lfmodex
+    SOURCES += src/core/audio.cpp
+
+}
