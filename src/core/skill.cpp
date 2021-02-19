@@ -14,7 +14,6 @@ TriggerSkill::TriggerSkill(const QString &name)
 ViewAsSkill::ViewAsSkill(const QString &name)
     : Skill(name), response_pattern(QString()), response_or_use(false), expand_pile(QString())
 {
-
 }
 
 ScenarioRule::ScenarioRule(Scenario *scenario)

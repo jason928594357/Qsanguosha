@@ -51,4 +51,6 @@ protected:
     RoomState _m_roomState;
 };
 
+extern Client *ClientInstance;
+
 #endif // CLIENT_H

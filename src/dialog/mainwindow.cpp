@@ -7,6 +7,7 @@
 #include "settings.h"
 #include "configdialog.h"
 #include "generaloverview.h"
+#include "lobbyscene.h"
 
 #include <QGraphicsView>
 #include <QVBoxLayout>
@@ -103,4 +104,31 @@ BroadcastBox::BroadcastBox(Server *server,QWidget *parent)
 void BroadcastBox::accept() {
     QDialog::accept();
     server->broadcastSystemMessage(text_edit->toPlainText());
+}
+
+void MainWindow::enterLobby(){
+    if(!Config.HistoryIPs.contains(Config.HostAddress)){
+        Config.HistoryIPs << Config.HostAddress;
+        Config.HistoryIPs.sort();
+        Config.setValue("HistoryIPs", Config.HistoryIPs);
+    }
+
+    LobbyScene *scene = new LobbyScene(this);
+    connect(scene, &LobbyScene::createRoomClicked, this, &MainWindow::onCreateRoomClicked);
+    connect(scene, (void (LobbyScene::*)())(&LobbyScene::roomSelected), this, &MainWindow::startConnection);
+    connect(scene, &LobbyScene::exit, this, &MainWindow::exitScene);
+
+    gotoScene(scene);
+}
+
+void MainWindow::onCreateRoomClicked(){
+    bool hasGlobalIp = false;
+}
+
+void MainWindow::exitScene(){
+
+}
+
+void MainWindow::gotoScene(QGraphicsScene *scene){
+
 }

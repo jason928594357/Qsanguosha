@@ -50,7 +50,8 @@ SOURCES += \
     src/scenario/scenario.cpp \
     src/scenario/miniscenarios.cpp \
     src/core/skill.cpp \
-    src/core/structs.cpp
+    src/core/structs.cpp \
+    src/ui/lobbyscene.cpp
 
 HEADERS += \
     src/core/engine.h \
@@ -90,7 +91,8 @@ HEADERS += \
     src/scenario/scenario.h \
     src/scenario/miniscenarios.h \
     src/core/skill.h \
-    src/core/structs.h
+    src/core/structs.h \
+    src/ui/lobbyscene.h
 
 FORMS += \
     src/dialog/connectiondialog.ui \
@@ -107,6 +109,7 @@ INCLUDEPATH += src/ui
 INCLUDEPATH += src/util
 INCLUDEPATH += src/package
 INCLUDEPATH += src/scenario
+INCLUDEPATH += src/client
 
 LIBS += -L.
 

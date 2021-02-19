@@ -53,6 +53,13 @@ public slots:
 private slots:
     void on_actionStart_Server_triggered();
     void on_actionGeneral_Overview_triggered();
+
+    void enterLobby();
+    void gotoScene(QGraphicsScene *scene);
+    void exitScene();
+    void onCreateRoomClicked();
 };
+
+
 
 #endif // MAINWINDOW_H
