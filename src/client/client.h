@@ -3,6 +3,7 @@
 
 #include "protocol.h"
 #include "roomstate.h"
+#include "abstractclientsocket.h"
 
 #include <QObject>
 
@@ -40,15 +41,21 @@ public:
     };
     explicit Client(QObject *parent, const QString &filename = QString());
     ~Client();
+    void notifyServer(QSanProtocol::CommandType command, const QVariant &arg = QVariant());
     void setStatus(Status status);
     Status getStatus() const;
     bool m_isDiscardActionRefusable;
-
+    void speakToServer(const QString &text);
 protected:
     Status status;    
     int alive_count;
     int swap_pile;
     RoomState _m_roomState;
+
+private:
+    AbstractClientSocket *socket;
+signals:
+    void lineSpoken(const QString &line);
 };
 
 extern Client *ClientInstance;

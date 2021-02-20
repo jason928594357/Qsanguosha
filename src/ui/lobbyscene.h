@@ -3,6 +3,8 @@
 
 #include <QGraphicsScene>
 #include <QMainWindow>
+#include <QLineEdit>
+#include <QTextEdit>
 
 class Client;
 
@@ -16,7 +18,12 @@ signals:
     void createRoomClicked();
     void exit();
 
+private slots:
+    void speakToServer();
 private:
+    QWidget *chatWidget;
+    QLineEdit *chatLineEdit;
+    QTextEdit *chatBox;
     int currentPage;
     Client *client;
 };

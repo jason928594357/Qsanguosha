@@ -1,4 +1,5 @@
 #include "client.h"
+#include "protocol.h"
 
 using namespace QSanProtocol;
 
@@ -6,8 +7,8 @@ Client *ClientInstance = NULL;
 
 Client::Client(QObject *parent, const QString &filename)
     : QObject(parent), m_isDiscardActionRefusable(true),
-       status(NotActive), alive_count(1), swap_pile(0),
-       _m_roomState(true)
+      status(NotActive), alive_count(1), swap_pile(0),
+      _m_roomState(true)
 {
     ClientInstance = this;
 }
@@ -28,4 +29,19 @@ void Client::setStatus(Status status){
 
 Client::Status Client::getStatus() const{
     return status;
+}
+
+void Client::speakToServer(const QString &text){
+    if(text.isEmpty()){
+        return;
+    }
+    notifyServer(S_COMMAND_SPEAK, text);
+}
+
+void Client::notifyServer(CommandType command, const QVariant &arg) {
+    if (socket) {
+        //Packet packet(S_SRC_CLIENT | S_TYPE_NOTIFICATION | S_DEST_ROOM, command);
+        //packet.setMessageBody(arg);
+        //socket->send(packet.toJson());
+    }
 }
