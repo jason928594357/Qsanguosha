@@ -7,9 +7,11 @@
 #include "record.h"
 
 #include <QObject>
+#include <QTextDocument>
 
 class Recorder;
 class Replayer;
+class AbstractUdpSocket;
 
 class Client : public QObject {
     Q_OBJECT
@@ -46,6 +48,9 @@ public:
     explicit Client(QObject *parent, const QString &filename = QString());
     ~Client();
     typedef void (Client::*Callback) (const QVariant &);
+
+    void checkVersion(const QVariant &server_version);
+
     void notifyServer(QSanProtocol::CommandType command, const QVariant &arg = QVariant());
     void setStatus(Status status);
     Status getStatus() const;
@@ -66,7 +71,13 @@ private:
     static QHash<QSanProtocol::CommandType, Callback> callbacks;
     Recorder *recorder;
     Replayer *replayer;
+    QTextDocument *lines_doc,*prompt_doc;
+    AbstractUdpSocket *detector;
+private slots:
+    void processServerPacket(const QByteArray &cmd);
+    void processDatagram(const QByteArray &data, const QHostAddress &from, ushort port);
 signals:
+    void version_checked(const QString &version_number, const QString &mod_name);
     void lineSpoken(const QString &line);
 };
 

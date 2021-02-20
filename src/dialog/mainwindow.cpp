@@ -8,6 +8,7 @@
 #include "configdialog.h"
 #include "generaloverview.h"
 #include "lobbyscene.h"
+#include "client.h"
 
 #include <QGraphicsView>
 #include <QVBoxLayout>
@@ -41,9 +42,12 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connection_dialog = new ConnectionDialog(this);
     connect(ui->actionStart_Game, &QAction::triggered, connection_dialog, &ConnectionDialog::exec);
+
+
     connect(connection_dialog, &ConnectionDialog::accepted, this, &MainWindow::startConnection);
 
     config_dialog = new ConfigDialog(this);
+
 
     StartScene *start_scene = new StartScene(this);
     QList<QAction *> actions;
@@ -83,7 +87,8 @@ void MainWindow::on_actionGeneral_Overview_triggered(){
 }
 
 void MainWindow::startConnection(){
-
+    Client *client = new Client(this);
+    connect(client, &Client::version_checked, this, &MainWindow::checkVersion);
 }
 
 MainWindow::~MainWindow()
@@ -119,6 +124,10 @@ void MainWindow::enterLobby(){
     connect(scene, &LobbyScene::exit, this, &MainWindow::exitScene);
 
     gotoScene(scene);
+}
+
+void MainWindow::checkVersion(const QString &server_version, const QString &server_mod){
+    qDebug("checkV");
 }
 
 void MainWindow::onCreateRoomClicked(){

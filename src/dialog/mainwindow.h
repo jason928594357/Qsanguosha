@@ -54,6 +54,7 @@ private slots:
     void on_actionStart_Server_triggered();
     void on_actionGeneral_Overview_triggered();
 
+    void checkVersion(const QString &server_version, const QString &server_mod);
     void enterLobby();
     void gotoScene(QGraphicsScene *scene);
     void exitScene();

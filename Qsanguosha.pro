@@ -52,7 +52,8 @@ SOURCES += \
     src/core/skill.cpp \
     src/core/structs.cpp \
     src/ui/lobbyscene.cpp \
-    src/util/record.cpp
+    src/util/record.cpp \
+    src/ui/roomscene.cpp
 
 HEADERS += \
     src/core/engine.h \
@@ -94,7 +95,8 @@ HEADERS += \
     src/core/skill.h \
     src/core/structs.h \
     src/ui/lobbyscene.h \
-    src/util/record.h
+    src/util/record.h \
+    src/ui/roomscene.h
 
 FORMS += \
     src/dialog/connectiondialog.ui \

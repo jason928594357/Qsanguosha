@@ -32,6 +32,7 @@ void UdpSocket::writeDatagram(const QByteArray &data, const QHostAddress &to, us
 }
 
 void UdpSocket::processNewDatagram(){
+    qDebug("接收信号");
     while(m_socket->hasPendingDatagrams()){
         QHostAddress from;
         QByteArray data;
