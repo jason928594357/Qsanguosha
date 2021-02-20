@@ -4,8 +4,12 @@
 #include "protocol.h"
 #include "roomstate.h"
 #include "abstractclientsocket.h"
+#include "record.h"
 
 #include <QObject>
+
+class Recorder;
+class Replayer;
 
 class Client : public QObject {
     Q_OBJECT
@@ -41,19 +45,27 @@ public:
     };
     explicit Client(QObject *parent, const QString &filename = QString());
     ~Client();
+    typedef void (Client::*Callback) (const QVariant &);
     void notifyServer(QSanProtocol::CommandType command, const QVariant &arg = QVariant());
     void setStatus(Status status);
     Status getStatus() const;
     bool m_isDiscardActionRefusable;
     void speakToServer(const QString &text);
+    bool m_noNullificationThisTime;
+    QString m_noNullificationTrickName;
+
 protected:
-    Status status;    
+    Status status;
     int alive_count;
     int swap_pile;
     RoomState _m_roomState;
 
 private:
     AbstractClientSocket *socket;
+    bool m_isGameOver;
+    static QHash<QSanProtocol::CommandType, Callback> callbacks;
+    Recorder *recorder;
+    Replayer *replayer;
 signals:
     void lineSpoken(const QString &line);
 };

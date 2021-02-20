@@ -51,7 +51,8 @@ SOURCES += \
     src/scenario/miniscenarios.cpp \
     src/core/skill.cpp \
     src/core/structs.cpp \
-    src/ui/lobbyscene.cpp
+    src/ui/lobbyscene.cpp \
+    src/util/record.cpp
 
 HEADERS += \
     src/core/engine.h \
@@ -92,7 +93,8 @@ HEADERS += \
     src/scenario/miniscenarios.h \
     src/core/skill.h \
     src/core/structs.h \
-    src/ui/lobbyscene.h
+    src/ui/lobbyscene.h \
+    src/util/record.h
 
 FORMS += \
     src/dialog/connectiondialog.ui \

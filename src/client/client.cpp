@@ -5,12 +5,26 @@ using namespace QSanProtocol;
 
 Client *ClientInstance = NULL;
 
+QHash<CommandType, Client::Callback> Client::callbacks;
+
 Client::Client(QObject *parent, const QString &filename)
     : QObject(parent), m_isDiscardActionRefusable(true),
       status(NotActive), alive_count(1), swap_pile(0),
       _m_roomState(true)
 {
     ClientInstance = this;
+    m_isGameOver = false;
+
+    m_noNullificationThisTime = false;
+    m_noNullificationTrickName = ".";
+    if(callbacks.isEmpty()){
+
+    }
+    recorder = NULL;
+    if(!filename.isEmpty()){
+        socket = NULL;
+        replayer = new Replayer(filename, this);
+    }
 }
 
 Client::~Client() {
