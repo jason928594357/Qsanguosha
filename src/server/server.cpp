@@ -1,6 +1,8 @@
 #include "server.h"
 #include "serversocket.h"
 #include "udpsocket.h"
+#include "clientstruct.h"
+#include "settings.h"
 
 using namespace QSanProtocol;
 
@@ -9,14 +11,25 @@ QHash<CommandType, Server::RoomFunction> Server::roomFunctions;
 QHash<ServiceType, Server::ServiceFunction> Server::serviceFunctions;
 
 Server::Server(QObject *parent, Role role)
+    : QObject(parent),  role(role), server(new ServerSocket),
+      current(NULL), lobby(NULL), daemon(NULL)
 {
     server->setParent(this);
     if(lobbyFunctions.isEmpty()){
         initLobbyFunctions();
     }
+    if(roomFunctions.isEmpty()){
+        initRoomFunctions();
+    }
+    ServerInfo = RoomInfoStruct(SettingsInstance);
+
 }
 
 void Server::broadcastSystemMessage(const QString &msg){
+
+}
+
+void Server::initRoomFunctions(){
 
 }
 

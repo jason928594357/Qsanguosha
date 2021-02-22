@@ -45,6 +45,7 @@
     <property name="title">
      <string>View</string>
     </property>
+	<addaction name="actionMinimize_to_system_tray"/>
    </widget>
    <widget class="QMenu" name="menuCheat">
     <property name="title">
@@ -96,8 +97,16 @@
     <string>Start Server</string>
    </property>
    <property name="shortcut">
-    <string>Alt+S</string>
+    <string>Ctrl+S</string>
    </property>
+  </action>
+  <action name="actionMinimize_to_system_tray">
+	<property name="text">
+		<string>Minimize to system tray</string>
+	</property>
+	<property name="shortcut">
+		<string>Alt+S</string>
+	</property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

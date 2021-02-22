@@ -8,6 +8,7 @@
 #include <QHostAddress>
 
 class AbstractUdpSocket;
+class Room;
 
 class Server : public QObject{
     Q_OBJECT
@@ -41,6 +42,7 @@ protected:
     Role role;
     AbstractServerSocket *server;
     AbstractClientSocket *lobby;
+    Room *current;
 
     typedef void (Server::*LobbyFunction)(const QVariant &);
     static QHash<QSanProtocol::CommandType, LobbyFunction> lobbyFunctions;

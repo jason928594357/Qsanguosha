@@ -53,7 +53,10 @@ SOURCES += \
     src/core/structs.cpp \
     src/ui/lobbyscene.cpp \
     src/util/record.cpp \
-    src/ui/roomscene.cpp
+    src/ui/roomscene.cpp \
+    src/ui/qsanselectableitem.cpp \
+    src/core/roomconfig.cpp \
+    src/client/clientstruct.cpp
 
 HEADERS += \
     src/core/engine.h \
@@ -96,7 +99,10 @@ HEADERS += \
     src/core/structs.h \
     src/ui/lobbyscene.h \
     src/util/record.h \
-    src/ui/roomscene.h
+    src/ui/roomscene.h \
+    src/ui/qsanselectableitem.h \
+    src/core/roomconfig.h \
+    src/client/clientstruct.h
 
 FORMS += \
     src/dialog/connectiondialog.ui \
@@ -115,7 +121,13 @@ INCLUDEPATH += src/package
 INCLUDEPATH += src/scenario
 INCLUDEPATH += src/client
 
+
+ICON += resource/sgs.ico
+
 LIBS += -L.
+
+INCLUDEPATH += $$PWD/include/freetype
+DEPENDPATH += $$PWD/include/freetype
 
 CONFIG(audio){
     DEFINES += AUDIO_SUPPORT

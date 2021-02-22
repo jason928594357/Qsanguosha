@@ -18,11 +18,7 @@ const int Settings::S_JUDGE_ANIMATION_DURATION = 1200;
 const int Settings::S_JUDGE_LONG_DELAY = 800;
 
 Settings::Settings()
-#ifdef Q_OS_WIN32
     : QSettings("config.ini", QSettings::IniFormat),
-#else
-    : QSettings("QSanguosha.org", "QSanguosha"),
-#endif
     Rect(-ViewWidth / 2, -ViewHeight / 2, ViewWidth, ViewHeight)
 {
     Q_ASSERT(SettingsInstance == NULL);
@@ -127,7 +123,7 @@ void Settings::init(){
 
     QStringList forbid_packages = value("ForbidPackages").toStringList();
     if (forbid_packages.isEmpty()) {
-        forbid_packages << "test" << "jiange-defense";
+        forbid_packages << "New3v3Card" << "New3v3_2013Card" << "New1v1Card" << "BossMode" << "JianGeDefense" << "test";;
         setValue("ForbidPackages", forbid_packages);
     }
 }

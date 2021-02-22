@@ -9,11 +9,13 @@
 #include "generaloverview.h"
 #include "lobbyscene.h"
 #include "client.h"
+#include "skinbank.h"
 
 #include <QGraphicsView>
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QMessageBox>
+#include <QProcess>
 
 class FitView: public QGraphicsView {
 public:
@@ -61,7 +63,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::on_actionStart_Server_triggered(){
     ServerDialog *dialog = new ServerDialog(this);
-    if(!dialog ->config()){
+    int accept_type = dialog->config();
+    if(accept_type == 0){
         return;
     }
     server = new Server(this);
@@ -71,13 +74,34 @@ void MainWindow::on_actionStart_Server_triggered(){
         server = NULL;
         return;
     }
-
     if (Config.ConnectToLobby){
         server->connectToLobby();
     }
-    server->daemonize();
+    if(accept_type==1){
+        server->daemonize();
+        ui->actionStart_Game->disconnect();
 
-    ui->actionStart_Game->disconnect();
+        connect(ui->actionStart_Game, SIGNAL(triggered()), this, SLOT(startGameInAnotherInstance()));
+
+        StartScene *start_scene = qobject_cast<StartScene *>(scene);
+        qDebug("start serve");
+        if (start_scene) {
+            start_scene->switchToServer(server);
+            if (Config.value("EnableMinimizeDialog", false).toBool())
+                this->on_actionMinimize_to_system_tray_triggered();
+        }
+    }
+
+}
+void MainWindow::startGameInAnotherInstance(){
+    QProcess::startDetached(QApplication::applicationFilePath(), QStringList());
+}
+
+void MainWindow::on_actionMinimize_to_system_tray_triggered(){
+    if(systray==NULL){
+        QIcon icon("image/system/magatamas/3.png");
+        systray = new QSystemTrayIcon(icon, this);
+    }
 }
 
 void MainWindow::on_actionGeneral_Overview_triggered(){
@@ -94,6 +118,8 @@ void MainWindow::startConnection(){
 MainWindow::~MainWindow()
 {
     delete ui;
+    view->deleteLater();
+    //QSanSkinFactory::destroyInstance();
 }
 
 BroadcastBox::BroadcastBox(Server *server,QWidget *parent)

@@ -7,6 +7,7 @@
 #include <QMainWindow>
 #include <QDialog>
 #include <QTextEdit>
+#include<QSystemTrayIcon>
 
 namespace Ui {
     class MainWindow;
@@ -46,6 +47,7 @@ private:
     ConnectionDialog *connection_dialog;
     Server *server;
     ConfigDialog *config_dialog;
+    QSystemTrayIcon *systray;
 
 public slots:
     void startConnection();
@@ -53,12 +55,14 @@ public slots:
 private slots:
     void on_actionStart_Server_triggered();
     void on_actionGeneral_Overview_triggered();
-
+    void on_actionMinimize_to_system_tray_triggered();
     void checkVersion(const QString &server_version, const QString &server_mod);
     void enterLobby();
     void gotoScene(QGraphicsScene *scene);
     void exitScene();
     void onCreateRoomClicked();
+
+    void startGameInAnotherInstance();
 };
 
 
