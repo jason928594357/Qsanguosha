@@ -19,3 +19,6 @@ FORMS += \
 
 INCLUDEPATH += src/dialog
 
+RC_FILE += resource/icon.rc
+
+TRANSLATIONS += builds/sanguosha.ts
