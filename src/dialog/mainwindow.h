@@ -2,10 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QGraphicsScene>
 
 namespace Ui {
 class MainWindow;
 }
+
+class FitView;
 
 class MainWindow : public QMainWindow
 {
@@ -14,9 +17,14 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void setBackgroundBrush(bool center_as_origin);
 
 private:
+    FitView *view;
+    QGraphicsScene *scene;
     Ui::MainWindow *ui;
+
+    void restoreFromConfig();
 
 private slots:
     void on_actionExit_triggered();
