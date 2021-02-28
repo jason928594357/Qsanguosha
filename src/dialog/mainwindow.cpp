@@ -41,7 +41,18 @@ MainWindow::MainWindow(QWidget *parent) :
     qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
     ui->setupUi(this);
     StartScene *start_scene = new StartScene;
-
+    QList<QAction *> actions;
+    actions << ui->actionStart_Game
+            << ui->actionStart_Server
+            << ui->actionReplay
+            << ui->actionConfigure
+            << ui->actionGeneral_Overview
+            << ui->actionCard_Overview
+            << ui->actionScenario_Overview
+            << ui->actionAbout;
+    foreach (QAction *action, actions) {
+        start_scene->addButton(action);
+    }
     scene = start_scene;
     FitView *view = new FitView(scene);
 

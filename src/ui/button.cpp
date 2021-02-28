@@ -76,6 +76,30 @@ void Button::setMute(bool mute)
     this->mute = mute;
 }
 
+void Button::setFont(const QFont &font){
+    this->font = font;
+    title.fill(QColor(0,0,0,0));
+    QPainter pt(&title);
+    pt.setFont(font);
+    pt.setPen(Config.textEditColor);
+    pt.setRenderHint(QPainter::TextAntialiasing);
+    pt.drawText(boundingRect(),Qt::AlignCenter,label);
+    title_item->setPixmap(title);
+}
+
+void Button::hoverEnterEvent(QGraphicsSceneHoverEvent *){
+    setFocus(Qt::MouseFocusReason);
+
+}
+
+void Button::mousePressEvent(QGraphicsSceneMouseEvent *event){
+    event->accept();
+}
+
+void Button::mouseReleaseEvent(QGraphicsSceneMouseEvent *){
+    emit clicked();
+}
+
 QRectF Button::boundingRect() const
 {
     return QRectF(QPointF(), size);
@@ -88,4 +112,18 @@ void Button::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget 
     painter->fillRect(rect, QColor(255, 255, 255, glow * 10));
 }
 
-
+void Button::timerEvent(QTimerEvent *){
+    update();
+    if(hasFocus()){
+        if(glow <5){
+            glow++;
+        }
+    }else{
+        if(glow >0){
+            glow--;
+        }else if(timer_id){
+            QObject::killTimer(timer_id);
+            timer_id = 0;
+        }
+    }
+}

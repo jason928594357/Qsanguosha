@@ -11,7 +11,6 @@ Settings::Settings()
     : QSettings("config.ini", QSettings::IniFormat),
       Rect(-ViewWidth / 2, -ViewHeight / 2, ViewWidth, ViewHeight)
 {
-    qDebug("123");
 }
 
 
