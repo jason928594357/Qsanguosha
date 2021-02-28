@@ -3,6 +3,7 @@
 #include "startscene.h"
 #include "settings.h"
 #include "roomscene.h"
+#include "cardoverview.h"
 
 #include <QMessageBox>
 #include <QGraphicsView>
@@ -107,4 +108,10 @@ void MainWindow::setBackgroundBrush(bool centerAsOrigin)
         brush.setTransform(transform);
         scene->setBackgroundBrush(brush);
     }
+}
+
+void MainWindow::on_actionCard_Overview_triggered(){
+    CardOverview *overview = CardOverview::getInstance(this);
+    //overview->loadFromAll();
+    overview->show();
 }

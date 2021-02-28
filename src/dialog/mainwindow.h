@@ -29,6 +29,7 @@ private:
     void restoreFromConfig();
 
 private slots:
+    void on_actionCard_Overview_triggered();
     void on_actionExit_triggered();
 };
 

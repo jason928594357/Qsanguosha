@@ -14,7 +14,8 @@ SOURCES += \
     src/ui/startscene.cpp \
     src/ui/qsanselectableitem.cpp \
     src/ui/button.cpp \
-    src/ui/roomscene.cpp
+    src/ui/roomscene.cpp \
+    src/dialog/cardoverview.cpp
 
 HEADERS += \
     src/dialog/mainwindow.h \
@@ -22,10 +23,12 @@ HEADERS += \
     src/ui/startscene.h \
     src/ui/qsanselectableitem.h \
     src/ui/button.h \
-    src/ui/roomscene.h
+    src/ui/roomscene.h \
+    src/dialog/cardoverview.h
 
 FORMS += \
-    src/dialog/mainwindow.ui
+    src/dialog/mainwindow.ui \
+    src/dialog/cardoverview.ui
 
 INCLUDEPATH += src/dialog
 INCLUDEPATH += src/core
