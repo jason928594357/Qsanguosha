@@ -54,6 +54,13 @@ void MainWindow::restoreFromConfig(){
     move(Config.value("WindowPosition").toPoint());
 }
 
+void MainWindow::closeEvent(QCloseEvent *)
+{
+    Config.setValue("WindowSize", size());
+    Config.setValue("WindowPosition", pos());
+    Config.setValue("WindowState", (int)windowState());
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;

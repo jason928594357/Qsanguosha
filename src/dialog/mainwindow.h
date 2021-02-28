@@ -19,6 +19,8 @@ public:
     ~MainWindow();
     void setBackgroundBrush(bool center_as_origin);
 
+public:
+    virtual void closeEvent(QCloseEvent *event);
 private:
     FitView *view;
     QGraphicsScene *scene;
