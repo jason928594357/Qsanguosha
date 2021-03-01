@@ -1,5 +1,5 @@
 QT       += core gui opengl script
-
+CONFIG   += audio
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Qsanguosha
@@ -16,8 +16,8 @@ SOURCES += \
     src/ui/button.cpp \
     src/ui/roomscene.cpp \
     src/dialog/cardoverview.cpp \
-    src/core/engine.cpp \
-    src/core/card.cpp
+    src/core/card.cpp \
+    src/core/engine.cpp
 
 HEADERS += \
     src/dialog/mainwindow.h \
@@ -27,8 +27,9 @@ HEADERS += \
     src/ui/button.h \
     src/ui/roomscene.h \
     src/dialog/cardoverview.h \
-    src/core/engine.h \
-    src/core/card.h
+    src/core/card.h \
+    src/core/audio.h \
+    src/core/engine.h
 
 FORMS += \
     src/dialog/mainwindow.ui \
@@ -37,6 +38,16 @@ FORMS += \
 INCLUDEPATH += src/dialog
 INCLUDEPATH += src/core
 INCLUDEPATH += src/ui
+
+
+LIBS += -L.
+
+CONFIG(audio){
+    DEFINES += AUDIO_SUPPORT
+    INCLUDEPATH += include/fmod
+    LIBS += -lfmodex
+    SOURCES += src/core/audio.cpp
+}
 
 RC_FILE += resource/icon.rc
 

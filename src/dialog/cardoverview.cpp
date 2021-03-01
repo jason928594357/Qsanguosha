@@ -23,7 +23,7 @@ CardOverview::CardOverview(QWidget *parent)
 }
 
 void CardOverview::loadFromAll(){
-    int n = Sanguosha->getCardCount();
+    //int n = Sanguosha->getCardCount();
 }
 
 CardOverview::~CardOverview()

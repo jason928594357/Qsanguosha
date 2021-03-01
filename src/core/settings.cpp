@@ -15,6 +15,7 @@ Settings::Settings()
 
 
 void Settings::init(){
+
     QString font_path = value("DefaultFontPath", "font/simli.ttf").toString();
     int font_id = QFontDatabase::addApplicationFont(font_path);
     if(font_id!=-1){
@@ -27,4 +28,7 @@ void Settings::init(){
     textEditColor = QColor(value("textEditColor", "white").toString());
     smallFont.setPixelSize(27);
     bigFont.setPixelSize(56);
+    EffectVolume = value("EffectVolume", 1.0f).toFloat();
+    EnableEffects = value("EnableEffects",true).toBool();
+
 }

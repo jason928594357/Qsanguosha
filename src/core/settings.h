@@ -19,6 +19,8 @@ public:
     QColor textEditColor;
     QString BackgroundImage;
     bool FitInView;
+    float EffectVolume;
+    bool EnableEffects;
 };
 
 extern Settings Config;

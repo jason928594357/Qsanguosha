@@ -1,5 +1,6 @@
 #include "button.h"
 #include "settings.h"
+#include "engine.h"
 
 static QRectF ButtonRect(0, 0, 189, 46);
 
@@ -90,6 +91,10 @@ void Button::setFont(const QFont &font){
 void Button::hoverEnterEvent(QGraphicsSceneHoverEvent *){
     setFocus(Qt::MouseFocusReason);
 
+    if(!mute){
+
+        Sanguosha->playSystemAudioEffect("button-hover", false);
+    }
 }
 
 void Button::mousePressEvent(QGraphicsSceneMouseEvent *event){
@@ -97,6 +102,9 @@ void Button::mousePressEvent(QGraphicsSceneMouseEvent *event){
 }
 
 void Button::mouseReleaseEvent(QGraphicsSceneMouseEvent *){
+    if (!mute){
+        Sanguosha->playSystemAudioEffect("button-down", false);
+    }
     emit clicked();
 }
 
