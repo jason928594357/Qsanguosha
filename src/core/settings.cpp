@@ -25,4 +25,6 @@ void Settings::init(){
     BackgroundImage = value("BackgroundImage", "image/system/backdrop/default.jpg").toString();
     FitInView = value("FitInView", false).toBool();
     textEditColor = QColor(value("textEditColor", "white").toString());
+    smallFont.setPixelSize(27);
+    bigFont.setPixelSize(56);
 }
