@@ -112,6 +112,6 @@ void MainWindow::setBackgroundBrush(bool centerAsOrigin)
 
 void MainWindow::on_actionCard_Overview_triggered(){
     CardOverview *overview = CardOverview::getInstance(this);
-    //overview->loadFromAll();
+    overview->loadFromAll();
     overview->show();
 }

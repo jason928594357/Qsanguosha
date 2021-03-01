@@ -11,6 +11,10 @@ class CardOverview :public QDialog{
 public:
     static CardOverview *getInstance(QWidget *main_window);
     CardOverview(QWidget *parent = 0);
+    void loadFromAll();
+    ~CardOverview();
+private:
+    Ui::CardOverview *ui;
 };
 
 #endif // CARDOVERVIEW_H
