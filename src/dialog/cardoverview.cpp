@@ -23,10 +23,23 @@ CardOverview::CardOverview(QWidget *parent)
 }
 
 void CardOverview::loadFromAll(){
-    //int n = Sanguosha->getCardCount();
+    int n = Sanguosha->getCardCount();
+    ui->tableWidget->setRowCount(n);
+    for(int i = 0; i < n; i++){
+       const Card *card = Sanguosha->getEngineCard(i);
+       addCard(i,card);
+    }
 }
 
 CardOverview::~CardOverview()
 {
     delete ui;
+}
+
+void CardOverview::addCard(int i, const Card *card){
+    QString name = Sanguosha->translate(card->objectName());
+    QTableWidgetItem *name_item = new QTableWidgetItem(name);
+    name_item->setData(Qt::UserRole,card->getId());
+    ui->tableWidget->setItem(i,0,name_item);
+
 }

@@ -1,6 +1,8 @@
 #ifndef CARDOVERVIEW_H
 #define CARDOVERVIEW_H
 
+#include "card.h"
+
 #include <QDialog>
 
 namespace Ui {
@@ -15,6 +17,7 @@ public:
     ~CardOverview();
 private:
     Ui::CardOverview *ui;
+    void addCard(int i, const Card *card);
 };
 
 #endif // CARDOVERVIEW_H

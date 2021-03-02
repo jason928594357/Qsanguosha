@@ -17,7 +17,11 @@ SOURCES += \
     src/ui/roomscene.cpp \
     src/dialog/cardoverview.cpp \
     src/core/card.cpp \
-    src/core/engine.cpp
+    src/core/engine.cpp \
+    src/package/package.cpp \
+    src/package/standard.cpp \
+    src/package/exppattern.cpp \
+    src/package/standardcards.cpp
 
 HEADERS += \
     src/dialog/mainwindow.h \
@@ -29,7 +33,11 @@ HEADERS += \
     src/dialog/cardoverview.h \
     src/core/card.h \
     src/core/audio.h \
-    src/core/engine.h
+    src/core/engine.h \
+    src/package/package.h \
+    src/package/exppattern.h \
+    src/package/standardequips.h \
+    src/package/standard.h
 
 FORMS += \
     src/dialog/mainwindow.ui \
@@ -38,6 +46,7 @@ FORMS += \
 INCLUDEPATH += src/dialog
 INCLUDEPATH += src/core
 INCLUDEPATH += src/ui
+INCLUDEPATH += src/package
 
 
 LIBS += -L.
