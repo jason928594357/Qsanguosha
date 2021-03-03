@@ -4,6 +4,7 @@
 #include "card.h"
 
 #include <QDialog>
+#include <QTableWidgetItem>
 
 namespace Ui {
 class CardOverview;
@@ -15,9 +16,14 @@ public:
     CardOverview(QWidget *parent = 0);
     void loadFromAll();
     ~CardOverview();
+
 private:
     Ui::CardOverview *ui;
     void addCard(int i, const Card *card);
+
+private slots:
+    void on_tableWidget_itemDoubleClicked(QTableWidgetItem *);
+    void on_tableWidget_itemSelectionChanged();
 };
 
 #endif // CARDOVERVIEW_H

@@ -1,4 +1,5 @@
 #include "card.h"
+#include "engine.h"
 
 const int Card::S_UNKNOWN_CARD_ID = -1;
 
@@ -9,6 +10,10 @@ Card::Card(Suit suit, int number, bool target_fixed)
 
 QString Card::getSuitString() const {
     return Suit2String(getSuit());
+}
+
+QString Card::getSuitStringTr() const {
+    return Suit2StringTr(getSuit());
 }
 
 void Card::setId(int id){
@@ -27,8 +32,29 @@ QString Card::Suit2String(Suit suit){
     switch (suit) {
     case Spade:
         return "spade";
+    case Club:
+        return "club";
+    case Heart:
+        return "heart";
+    case Diamond:
+        return "diamond";
     default:
         return "no_suit";
+    }
+}
+
+QString Card::Suit2StringTr(Suit suit){
+    switch (suit) {
+    case Spade:
+        return tr("spade");
+    case Club:
+        return tr("club");
+    case Heart:
+        return tr("heart");
+    case Diamond:
+        return tr("diamond");
+    default:
+        return tr("no_suit");
     }
 }
 
@@ -53,3 +79,9 @@ QString Card::getPackage() const {
         return QString();
     }
 }
+
+QString Card::getName() const {
+    return Sanguosha->translate(objectName());
+}
+
+

@@ -2,6 +2,42 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="zh_CN">
 <context>
+    <name>BasicCard</name>
+    <message>
+        <location filename="../src/package/standard.cpp" line="10"/>
+        <source>basic card</source>
+        <translation>基本牌</translation>
+    </message>
+</context>
+<context>
+    <name>Card</name>
+    <message>
+        <location filename="../src/core/card.cpp" line="49"/>
+        <source>spade</source>
+        <translation>黑桃</translation>
+    </message>
+    <message>
+        <location filename="../src/core/card.cpp" line="51"/>
+        <source>club</source>
+        <translation>梅花</translation>
+    </message>
+    <message>
+        <location filename="../src/core/card.cpp" line="53"/>
+        <source>heart</source>
+        <translation>红桃</translation>
+    </message>
+    <message>
+        <location filename="../src/core/card.cpp" line="55"/>
+        <source>diamond</source>
+        <translation>方块</translation>
+    </message>
+    <message>
+        <location filename="../src/core/card.cpp" line="57"/>
+        <source>no_suit</source>
+        <translation>空</translation>
+    </message>
+</context>
+<context>
     <name>CardOverview</name>
     <message>
         <location filename="../src/dialog/cardoverview.ui" line="14"/>
@@ -158,12 +194,46 @@
     <message>
         <location filename="../src/ui/qsanselectableitem.cpp" line="19"/>
         <source>Can not load image %1[%2], error string is %3</source>
-        <translation>加载图片失败！！！</translation>
+        <translation>无法加载图片 %1[%2],错误信息： %3</translation>
     </message>
     <message>
         <location filename="../src/ui/qsanselectableitem.cpp" line="21"/>
         <source>Warning</source>
         <translation>警告</translation>
+    </message>
+</context>
+<context>
+    <name>Slash</name>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="20"/>
+        <source>slash</source>
+        <translation>杀</translation>
+    </message>
+    <message>
+        <source>play phase</source>
+        <translation type="vanished">出牌阶段</translation>
+    </message>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="12"/>
+        <source>attack card</source>
+        <translation>进攻牌</translation>
+    </message>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="15"/>
+        <source>&lt;b&gt;【Slash】&lt;/b&gt;Basic card&lt;br /&gt;&lt;b&gt;Phase&lt;/b&gt;:play phase&lt;br /&gt;&lt;b&gt;Target&lt;/b&gt;:attack the other role wihtin range of the attack&lt;br /&gt;&lt;b&gt;Effect&lt;/b&gt;:a point damage to the target role.</source>
+        <translation>&lt;b&gt;【杀】&lt;/b&gt;基本牌&lt;br /&gt;&lt;b&gt;时机&lt;/b&gt;：出牌阶段&lt;br /&gt;&lt;b&gt;目标&lt;/b&gt;：攻击范围内的一名其他角色&lt;br /&gt;&lt;b&gt;效果&lt;/b&gt;：对目标角色造成1点伤害。</translation>
+    </message>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="24"/>
+        <source>standard card</source>
+        <translation>标准版</translation>
+    </message>
+</context>
+<context>
+    <name>StandardCardPackage</name>
+    <message>
+        <source>standard card</source>
+        <translation type="vanished">标准版</translation>
     </message>
 </context>
 </TS>

@@ -19,6 +19,10 @@ public:
     }
     virtual QString getType() const;
     virtual CardType getTypeId() const;
+protected:
+    QString phase;
+    QString target;
+    QString effect;
 };
 
 class Slash : public BasicCard {
@@ -26,6 +30,9 @@ class Slash : public BasicCard {
 public:
     Q_INVOKABLE Slash(Card::Suit suit, int number);
     virtual QString getSubtype() const;
+    virtual QString getDescription() const;
+    virtual QString getCardName() const;
+    virtual QString getPackageName() const;
 };
 
 #endif // STANDARD_H

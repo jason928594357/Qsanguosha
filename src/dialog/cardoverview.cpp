@@ -16,9 +16,9 @@ CardOverview::CardOverview(QWidget *parent)
     : QDialog(parent), ui(new Ui::CardOverview){
     ui->setupUi(this);
     ui->tableWidget->setColumnWidth(0, 80);
-    ui->tableWidget->setColumnWidth(1, 70);
+    ui->tableWidget->setColumnWidth(1, 75);
     ui->tableWidget->setColumnWidth(2, 35);
-    ui->tableWidget->setColumnWidth(3, 60);
+    ui->tableWidget->setColumnWidth(3, 70);
     ui->tableWidget->setColumnWidth(4, 80);
 }
 
@@ -26,19 +26,19 @@ void CardOverview::loadFromAll(){
     int n = Sanguosha->getCardCount();
     ui->tableWidget->setRowCount(n);
     for(int i = 0; i < n; i++){
-       const Card *card = Sanguosha->getEngineCard(i);
-       addCard(i,card);
+        const Card *card = Sanguosha->getEngineCard(i);
+        addCard(i,card);
     }
     if(n > 0){
         // 当前行高亮
         ui->tableWidget->setCurrentItem(ui->tableWidget->item(0 , 0));
 
         const Card *card = Sanguosha->getEngineCard(0);
-        if(card->getTypeId() == Card::TypeBasic){
+        if(card->getTypeId() == Card::TypeEquip){
             ui->playAudioEffectButton->show();
             ui->malePlayButton->hide();
             ui->femalePlayButton->hide();
-        }else {
+        } else {
             ui->playAudioEffectButton->hide();
             ui->malePlayButton->show();
             ui->femalePlayButton->show();
@@ -52,13 +52,13 @@ CardOverview::~CardOverview()
 }
 
 void CardOverview::addCard(int i, const Card *card){
-    QString name = Sanguosha->translate(card->objectName());
+    QString name = Sanguosha->translate(card->getCardName());
     QIcon suit_icon = QIcon(QString("image/system/suit/%1.png").arg(card->getSuitString()));
-    QString suit_str = Sanguosha->translate(card->getSuitString());
+    QString suit_str = Sanguosha->translate(card->getSuitStringTr());
     QString point = card->getNumberString();
     QString type = Sanguosha->translate(card->getType());
     QString subtype = Sanguosha->translate(card->getSubtype());
-    QString package = Sanguosha->translate(card->getPackage());
+    QString package = Sanguosha->translate(card->getPackageName());
 
     QTableWidgetItem *name_item = new QTableWidgetItem(name);
     QTableWidgetItem *package_item = new QTableWidgetItem(package);
@@ -70,4 +70,26 @@ void CardOverview::addCard(int i, const Card *card){
     ui->tableWidget->setItem(i, 3, new QTableWidgetItem(type));
     ui->tableWidget->setItem(i, 4, new QTableWidgetItem(subtype));
     ui->tableWidget->setItem(i, 5, package_item);
+}
+
+void CardOverview::on_tableWidget_itemDoubleClicked(QTableWidgetItem *){
+    qDebug("123");
+}
+
+void CardOverview::on_tableWidget_itemSelectionChanged(){
+    int row = ui->tableWidget->currentRow();
+    int card_id = ui->tableWidget->item(row,0)->data(Qt::UserRole).toInt();
+    const Card *card = Sanguosha->getEngineCard(card_id);
+    QString pixmap_path = QString("image/big-card/%1.png").arg(card->objectName());
+    ui->cardLabel->setPixmap(pixmap_path);
+    ui->cardDescriptionBox->setText(card->getDescription());
+    if (card->getTypeId() == Card::TypeEquip) {
+        ui->playAudioEffectButton->show();
+        ui->malePlayButton->hide();
+        ui->femalePlayButton->hide();
+    } else {
+        ui->playAudioEffectButton->hide();
+        ui->malePlayButton->show();
+        ui->femalePlayButton->show();
+    }
 }
