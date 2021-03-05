@@ -1,6 +1,7 @@
 #include "cardoverview.h"
 #include "ui_cardoverview.h"
 #include "engine.h"
+#include "skinbank.h"
 
 static CardOverview *Overview;
 
@@ -73,7 +74,7 @@ void CardOverview::addCard(int i, const Card *card){
 }
 
 void CardOverview::on_tableWidget_itemDoubleClicked(QTableWidgetItem *){
-    qDebug("123");
+
 }
 
 void CardOverview::on_tableWidget_itemSelectionChanged(){
@@ -91,5 +92,23 @@ void CardOverview::on_tableWidget_itemSelectionChanged(){
         ui->playAudioEffectButton->hide();
         ui->malePlayButton->show();
         ui->femalePlayButton->show();
+    }
+}
+
+void CardOverview::on_malePlayButton_clicked(){
+    int row = ui->tableWidget->currentRow();
+    if(row >= 0){
+        int card_id = ui->tableWidget->item(row, 0)->data(Qt::UserRole).toInt();
+        const Card *card = Sanguosha->getEngineCard(card_id);
+        Sanguosha->playAudioEffect(G_ROOM_SKIN.getPlayerAudioEffectPath(card->objectName(),true),false);
+    }
+}
+
+void CardOverview::on_femalePlayButton_clicked(){
+    int row = ui->tableWidget->currentRow();
+    if (row >= 0) {
+        int card_id = ui->tableWidget->item(row, 0)->data(Qt::UserRole).toInt();
+        const Card *card = Sanguosha->getEngineCard(card_id);
+        Sanguosha->playAudioEffect(G_ROOM_SKIN.getPlayerAudioEffectPath(card->objectName(), false), false);
     }
 }

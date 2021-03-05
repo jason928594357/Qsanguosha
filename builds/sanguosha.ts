@@ -124,19 +124,9 @@
         <translation>启动游戏</translation>
     </message>
     <message>
-        <location filename="../src/dialog/mainwindow.ui" line="59"/>
-        <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/dialog/mainwindow.ui" line="64"/>
         <source>Start Server</source>
         <translation>启动服务器</translation>
-    </message>
-    <message>
-        <location filename="../src/dialog/mainwindow.ui" line="67"/>
-        <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/dialog/mainwindow.ui" line="72"/>
@@ -159,19 +149,9 @@
         <translation>武将一览</translation>
     </message>
     <message>
-        <location filename="../src/dialog/mainwindow.ui" line="90"/>
-        <source>Ctrl+E</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../src/dialog/mainwindow.ui" line="95"/>
         <source>Card overview</source>
         <translation>卡牌一览</translation>
-    </message>
-    <message>
-        <location filename="../src/dialog/mainwindow.ui" line="98"/>
-        <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/dialog/mainwindow.ui" line="103"/>
@@ -227,13 +207,6 @@
         <location filename="../src/package/standardcards.cpp" line="24"/>
         <source>standard card</source>
         <translation>标准版</translation>
-    </message>
-</context>
-<context>
-    <name>StandardCardPackage</name>
-    <message>
-        <source>standard card</source>
-        <translation type="vanished">标准版</translation>
     </message>
 </context>
 </TS>

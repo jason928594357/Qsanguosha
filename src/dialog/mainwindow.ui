@@ -45,7 +45,7 @@
     <property name="title">
      <string>Help</string>
     </property>
-	<addaction name="actionAbout"/>
+    <addaction name="actionAbout"/>
    </widget>
    <addaction name="menuGame"/>
    <addaction name="menuTools"/>
@@ -56,7 +56,7 @@
     <string>Start Game</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+G</string>
+    <string notr="true">Ctrl+G</string>
    </property>
   </action>
   <action name="actionStart_Server">
@@ -64,7 +64,7 @@
     <string>Start Server</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+S</string>
+    <string notr="true">Ctrl+S</string>
    </property>
   </action>
   <action name="actionReplay">
@@ -78,6 +78,10 @@
    </property>
   </action>
   <action name="actionConfigure">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../image/system/settings.png</normaloff>../../image/system/settings.png</iconset>
+   </property>
    <property name="text">
     <string>Configure</string>
    </property>
@@ -87,7 +91,7 @@
     <string>General overview</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+E</string>
+    <string notr="true">Ctrl+E</string>
    </property>
   </action>
   <action name="actionCard_Overview">
@@ -95,7 +99,7 @@
     <string>Card overview</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+R</string>
+    <string notr="true">Ctrl+R</string>
    </property>
   </action>
   <action name="actionScenario_Overview">

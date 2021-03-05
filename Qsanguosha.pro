@@ -21,7 +21,9 @@ SOURCES += \
     src/package/package.cpp \
     src/package/standard.cpp \
     src/package/exppattern.cpp \
-    src/package/standardcards.cpp
+    src/package/standardcards.cpp \
+    src/ui/skinbank.cpp \
+    src/core/json.cpp
 
 HEADERS += \
     src/dialog/mainwindow.h \
@@ -37,7 +39,9 @@ HEADERS += \
     src/package/package.h \
     src/package/exppattern.h \
     src/package/standardequips.h \
-    src/package/standard.h
+    src/package/standard.h \
+    src/ui/skinbank.h \
+    src/core/json.h
 
 FORMS += \
     src/dialog/mainwindow.ui \

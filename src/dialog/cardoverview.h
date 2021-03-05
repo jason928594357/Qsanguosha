@@ -24,6 +24,8 @@ private:
 private slots:
     void on_tableWidget_itemDoubleClicked(QTableWidgetItem *);
     void on_tableWidget_itemSelectionChanged();
+    void on_malePlayButton_clicked();
+    void on_femalePlayButton_clicked();
 };
 
 #endif // CARDOVERVIEW_H

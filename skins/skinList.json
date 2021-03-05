@@ -1,0 +1,8 @@
+{
+	"fulldefault": {
+		"roomLayoutConfigFile": "skins/fulldefaultSkin.layout.json",
+		"roomImageConfigFile": "skins/fulldefaultSkin.image.json",
+		"roomAudioConfigFile": "skins/defaultSkin.audio.json",
+		"roomAnimationConfigFile": "skins/defaultSkin.animation.json"
+	}
+}
