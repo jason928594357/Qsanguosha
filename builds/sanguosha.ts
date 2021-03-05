@@ -96,6 +96,29 @@
     </message>
 </context>
 <context>
+    <name>Jink</name>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="33"/>
+        <source>defense card</source>
+        <translation>防御牌</translation>
+    </message>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="37"/>
+        <source>&lt;b&gt;【Jink】&lt;/b&gt;Basic card&lt;br /&gt;&lt;b&gt;Phase&lt;/b&gt;:【Slash】when it takes effect for you&lt;br /&gt;&lt;b&gt;Target&lt;/b&gt;:this【Slash】&lt;br /&gt;&lt;b&gt;Effect&lt;/b&gt;:offset the effect of this【Slash】.</source>
+        <translation>&lt;b&gt;【闪】&lt;/b&gt;基本牌&lt;br /&gt;&lt;b&gt;时机&lt;/b&gt;：【杀】对你生效时&lt;br /&gt;&lt;b&gt;目标&lt;/b&gt;：此【杀】&lt;br /&gt;&lt;b&gt;效果&lt;/b&gt;：抵消此【杀】的效果。</translation>
+    </message>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="42"/>
+        <source>jink</source>
+        <translation>闪</translation>
+    </message>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="46"/>
+        <source>standard card</source>
+        <translation>标准版</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="../src/dialog/mainwindow.ui" line="14"/>
@@ -139,27 +162,27 @@
         <translation>退出</translation>
     </message>
     <message>
-        <location filename="../src/dialog/mainwindow.ui" line="82"/>
+        <location filename="../src/dialog/mainwindow.ui" line="86"/>
         <source>Configure</source>
         <translation>配置</translation>
     </message>
     <message>
-        <location filename="../src/dialog/mainwindow.ui" line="87"/>
+        <location filename="../src/dialog/mainwindow.ui" line="91"/>
         <source>General overview</source>
         <translation>武将一览</translation>
     </message>
     <message>
-        <location filename="../src/dialog/mainwindow.ui" line="95"/>
+        <location filename="../src/dialog/mainwindow.ui" line="99"/>
         <source>Card overview</source>
         <translation>卡牌一览</translation>
     </message>
     <message>
-        <location filename="../src/dialog/mainwindow.ui" line="103"/>
+        <location filename="../src/dialog/mainwindow.ui" line="107"/>
         <source>Scenario overview</source>
         <translation>场景一览</translation>
     </message>
     <message>
-        <location filename="../src/dialog/mainwindow.ui" line="108"/>
+        <location filename="../src/dialog/mainwindow.ui" line="112"/>
         <source>About</source>
         <translation>关于</translation>
     </message>
@@ -185,7 +208,7 @@
 <context>
     <name>Slash</name>
     <message>
-        <location filename="../src/package/standardcards.cpp" line="20"/>
+        <location filename="../src/package/standardcards.cpp" line="21"/>
         <source>slash</source>
         <translation>杀</translation>
     </message>
@@ -199,12 +222,12 @@
         <translation>进攻牌</translation>
     </message>
     <message>
-        <location filename="../src/package/standardcards.cpp" line="15"/>
+        <location filename="../src/package/standardcards.cpp" line="16"/>
         <source>&lt;b&gt;【Slash】&lt;/b&gt;Basic card&lt;br /&gt;&lt;b&gt;Phase&lt;/b&gt;:play phase&lt;br /&gt;&lt;b&gt;Target&lt;/b&gt;:attack the other role wihtin range of the attack&lt;br /&gt;&lt;b&gt;Effect&lt;/b&gt;:a point damage to the target role.</source>
         <translation>&lt;b&gt;【杀】&lt;/b&gt;基本牌&lt;br /&gt;&lt;b&gt;时机&lt;/b&gt;：出牌阶段&lt;br /&gt;&lt;b&gt;目标&lt;/b&gt;：攻击范围内的一名其他角色&lt;br /&gt;&lt;b&gt;效果&lt;/b&gt;：对目标角色造成1点伤害。</translation>
     </message>
     <message>
-        <location filename="../src/package/standardcards.cpp" line="24"/>
+        <location filename="../src/package/standardcards.cpp" line="25"/>
         <source>standard card</source>
         <translation>标准版</translation>
     </message>

@@ -25,10 +25,22 @@ protected:
     QString effect;
 };
 
+// 杀
 class Slash : public BasicCard {
     Q_OBJECT
 public:
     Q_INVOKABLE Slash(Card::Suit suit, int number);
+    virtual QString getSubtype() const;
+    virtual QString getDescription() const;
+    virtual QString getCardName() const;
+    virtual QString getPackageName() const;
+};
+
+// 闪
+class Jink:public BasicCard{
+    Q_OBJECT
+public:
+    Q_INVOKABLE Jink(Card::Suit suit,int number);
     virtual QString getSubtype() const;
     virtual QString getDescription() const;
     virtual QString getCardName() const;

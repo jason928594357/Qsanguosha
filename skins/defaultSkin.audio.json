@@ -1,4 +1,6 @@
 {
 	"playerAudioEffect-male-slash": "audio/card/male/slash.ogg",
-	"playerAudioEffect-female-slash": "audio/card/female/slash.ogg"
+	"playerAudioEffect-male-jink": "audio/card/male/jink.ogg",
+	"playerAudioEffect-female-slash": "audio/card/female/slash.ogg",
+	"playerAudioEffect-female-jink": "audio/card/female/jink.ogg"
 }

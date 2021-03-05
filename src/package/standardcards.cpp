@@ -11,6 +11,7 @@ QString Slash::getSubtype() const
 {
     return tr("attack card");
 }
+
 QString Slash::getDescription() const{
     QString description = tr("<b>【Slash】</b>Basic card<br /><b>Phase</b>:play phase<br /><b>Target</b>:attack the other role wihtin range of the attack<br /><b>Effect</b>:a point damage to the target role.");
     return description;
@@ -21,6 +22,27 @@ QString Slash::getCardName() const {
 }
 
 QString Slash::getPackageName() const {
+    return tr("standard card");
+}
+
+Jink::Jink(Card::Suit suit, int number):BasicCard(suit,number){
+    setObjectName("jink");
+}
+
+QString Jink::getSubtype() const{
+    return tr("defense card");
+}
+
+QString Jink::getDescription() const{
+    QString description = tr("<b>【Jink】</b>Basic card<br /><b>Phase</b>:【Slash】when it takes effect for you<br /><b>Target</b>:this【Slash】<br /><b>Effect</b>:offset the effect of this【Slash】.");
+    return description;
+}
+
+QString Jink::getCardName() const {
+    return tr("jink");
+}
+
+QString Jink::getPackageName() const {
     return tr("standard card");
 }
 
@@ -56,7 +78,22 @@ StandardCardPackage::StandardCardPackage()
          << new Slash(Card::Diamond, 8)
          << new Slash(Card::Diamond, 9)
          << new Slash(Card::Diamond, 10)
-         << new Slash(Card::Diamond, 13);
+         << new Slash(Card::Diamond, 13)
+         << new Jink(Card::Heart, 2)
+         << new Jink(Card::Heart, 2)
+         << new Jink(Card::Heart, 13)
+         << new Jink(Card::Diamond, 2)
+         << new Jink(Card::Diamond, 2)
+         << new Jink(Card::Diamond, 3)
+         << new Jink(Card::Diamond, 4)
+         << new Jink(Card::Diamond, 5)
+         << new Jink(Card::Diamond, 6)
+         << new Jink(Card::Diamond, 7)
+         << new Jink(Card::Diamond, 8)
+         << new Jink(Card::Diamond, 9)
+         << new Jink(Card::Diamond, 10)
+         << new Jink(Card::Diamond, 11)
+         << new Jink(Card::Diamond, 11);
     foreach (Card *card, cards) {
         card->setParent(this);
     }
