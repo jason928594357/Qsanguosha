@@ -7,14 +7,15 @@ class Card : public QObject {
     Q_OBJECT
 public:
     enum Suit {
-        Spade,//黑桃
-        Club,//梅花
+        Spade,// 黑桃
+        Club,// 梅花
         Heart,// 红桃
-        Diamond//方片
+        Diamond// 方片
     };
     enum CardType{
-        TypeBasic,
-        TypeEquip
+        TypeBasic,// 基本牌
+        TypeEquip,// 装备牌
+        TypeTrick// 锦囊牌
     };
     Card(Suit suit, int number, bool target_fixed = false);
     QString getSuitString() const;

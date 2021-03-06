@@ -122,6 +122,89 @@
     </message>
 </context>
 <context>
+    <name>GeneralOverview</name>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="29"/>
+        <source>General Overview</source>
+        <translation>武将一览</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="48"/>
+        <source>Nick</source>
+        <translation>称号</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="53"/>
+        <source>General</source>
+        <translation>武将</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="58"/>
+        <source>Kingdom</source>
+        <translation>势力</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="63"/>
+        <source>Gender</source>
+        <translation>性别</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="68"/>
+        <source>MaxHP</source>
+        <translation>体力上限</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="73"/>
+        <source>Package</source>
+        <translation>包</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="107"/>
+        <source>changeGeneral</source>
+        <translation>替换为主将</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="114"/>
+        <source>changeGeneral2</source>
+        <translation>替换为副将</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="123"/>
+        <source>changeHeroSkin</source>
+        <translation>更换武将皮肤</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="130"/>
+        <source>Skill</source>
+        <translation>技能</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="184"/>
+        <source>CV</source>
+        <translation>配音</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="201"/>
+        <source>Designer</source>
+        <translation>设计</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="208"/>
+        <source>Illustrator</source>
+        <translation>插画</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="257"/>
+        <source>Search...</source>
+        <translation>搜索...</translation>
+    </message>
+    <message>
+        <location filename="../src/dialog/generaloverview.ui" line="264"/>
+        <source>Return...</source>
+        <translation>返回...</translation>
+    </message>
+</context>
+<context>
     <name>Jink</name>
     <message>
         <location filename="../src/package/standardcards.cpp" line="33"/>
@@ -148,7 +231,7 @@
     <name>MainWindow</name>
     <message>
         <location filename="../src/dialog/mainwindow.ui" line="14"/>
-        <location filename="../src/dialog/mainwindow.cpp" line="88"/>
+        <location filename="../src/dialog/mainwindow.cpp" line="89"/>
         <source>Sanguosha</source>
         <translation>三国杀</translation>
     </message>
@@ -213,7 +296,7 @@
         <translation>关于</translation>
     </message>
     <message>
-        <location filename="../src/dialog/mainwindow.cpp" line="89"/>
+        <location filename="../src/dialog/mainwindow.cpp" line="90"/>
         <source>Are you sure to exit?</source>
         <translation>你确定要退出吗？</translation>
     </message>

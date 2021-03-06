@@ -4,6 +4,7 @@
 #include "settings.h"
 #include "roomscene.h"
 #include "cardoverview.h"
+#include "generaloverview.h"
 
 #include <QMessageBox>
 #include <QGraphicsView>
@@ -108,6 +109,11 @@ void MainWindow::setBackgroundBrush(bool centerAsOrigin)
         brush.setTransform(transform);
         scene->setBackgroundBrush(brush);
     }
+}
+
+void MainWindow::on_actionGeneral_Overview_triggered(){
+    GeneralOverview *overview = GeneralOverview::getInstance(this);
+    overview->show();
 }
 
 void MainWindow::on_actionCard_Overview_triggered(){
