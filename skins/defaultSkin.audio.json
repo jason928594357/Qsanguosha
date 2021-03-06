@@ -3,5 +3,6 @@
 	"playerAudioEffect-male-jink": "audio/card/male/jink.ogg",
 	"playerAudioEffect-female-slash": "audio/card/female/slash.ogg",
 	"playerAudioEffect-female-jink": "audio/card/female/jink.ogg",
-	"playerAudioEffect-default-peach": "audio/card/common/peach.ogg"
+	"playerAudioEffect-default-peach": "audio/card/common/peach.ogg",
+	"playerAudioEffect-equip-crossbow": "audio/equip/crossbow.ogg"
 }

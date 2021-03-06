@@ -102,7 +102,6 @@ QString QSanRoomSkin::getPlayerAudioEffectPath(const QString &eventName, const Q
             }
         }
     }
-
     return fileName;
 }
 
@@ -128,9 +127,6 @@ QStringList IQSanComponentSkin::getAudioFileNames(const QString &key) const{
     }
     return QStringList();
 }
-
-
-
 
 QString QSanRoomSkin::getPlayerAudioEffectPath(const QString &eventName, bool isMale, int index) const{
     return getPlayerAudioEffectPath(eventName,QString(isMale?"male":"female"),index);

@@ -11,6 +11,7 @@ public:
     StandardPackage();
 };
 
+// 基本牌
 class BasicCard :public Card{
     Q_OBJECT
 public:
@@ -23,6 +24,25 @@ protected:
     QString phase;
     QString target;
     QString effect;
+};
+
+// 装备牌
+class EquipCard : public Card{
+    Q_OBJECT
+public:
+    EquipCard(Suit suit,int number):Card(suit,number,true){
+
+    }
+    virtual QString getType() const;
+    virtual CardType getTypeId() const;
+};
+
+// 武器牌
+class Weapon : public EquipCard {
+    Q_OBJECT
+public:
+    Weapon(Suit suit,int number, int range);
+    virtual QString getSubtype() const;
 };
 
 // 杀

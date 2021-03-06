@@ -96,6 +96,32 @@
     </message>
 </context>
 <context>
+    <name>Crossbow</name>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="75"/>
+        <source>&lt;b&gt;【Crossbow】&lt;/b&gt;Equip card·weapon&lt;br /&gt;&lt;b&gt;Attack range &lt;/b&gt;:1&lt;br /&gt;&lt;b&gt;Weapon skill&lt;/b&gt;:&lt;font color=&quot;blue&quot;&gt;&lt;b&gt;Compulsory.&lt;/b&gt;&lt;/font&gt;No limit to the number of times you can use 【Slash】 during paly phase.</source>
+        <translation>&lt;b&gt;【诸葛连弩】&lt;/b&gt;装备牌·武器&lt;br /&gt;&lt;b&gt;攻击范围&lt;/b&gt;：1&lt;br /&gt;&lt;b&gt;武器技能&lt;/b&gt;：&lt;font color=&quot;blue&quot;&gt;&lt;b&gt;锁定技。&lt;/b&gt;&lt;/font&gt;你于出牌阶段内使用【杀】无次数限制。</translation>
+    </message>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="80"/>
+        <source>crossbow</source>
+        <translation>诸葛连弩</translation>
+    </message>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="84"/>
+        <source>standard card</source>
+        <translation>标准版</translation>
+    </message>
+</context>
+<context>
+    <name>EquipCard</name>
+    <message>
+        <location filename="../src/package/standard.cpp" line="18"/>
+        <source>equip</source>
+        <translation>装备牌</translation>
+    </message>
+</context>
+<context>
     <name>Jink</name>
     <message>
         <location filename="../src/package/standardcards.cpp" line="33"/>
@@ -253,6 +279,14 @@
         <location filename="../src/package/standardcards.cpp" line="25"/>
         <source>standard card</source>
         <translation>标准版</translation>
+    </message>
+</context>
+<context>
+    <name>Weapon</name>
+    <message>
+        <location filename="../src/package/standard.cpp" line="32"/>
+        <source>weapon card</source>
+        <translation>武器</translation>
     </message>
 </context>
 </TS>

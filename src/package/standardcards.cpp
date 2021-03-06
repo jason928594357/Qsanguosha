@@ -67,11 +67,28 @@ QString Peach::getPackageName() const {
     return tr("standard card");
 }
 
+Crossbow::Crossbow(Suit suit):Weapon(suit, 1, 1){
+    setObjectName("crossbow");
+}
+
+QString Crossbow::getDescription()const {
+    QString description =tr("<b>【Crossbow】</b>Equip card·weapon<br /><b>Attack range </b>:1<br /><b>Weapon skill</b>:<font color=\"blue\"><b>Compulsory.</b></font>No limit to the number of times you can use 【Slash】 during paly phase.");
+    return description;
+}
+
+QString Crossbow::getCardName() const {
+    return tr("crossbow");
+}
+
+QString Crossbow::getPackageName() const {
+    return tr("standard card");
+}
+
 StandardCardPackage::StandardCardPackage()
     : Package("standard card", Package::CardPack){
     QList<Card *> cards;
-    cards << new Slash(Card::Spade,7)
-          <<new Slash(Card::Spade,8)
+    cards << new Slash(Card::Spade, 7)
+          <<new Slash(Card::Spade, 8)
          << new Slash(Card::Spade, 8)
          << new Slash(Card::Spade, 9)
          << new Slash(Card::Spade, 9)
@@ -122,7 +139,9 @@ StandardCardPackage::StandardCardPackage()
          << new Peach(Card::Heart, 8)
          << new Peach(Card::Heart, 9)
          << new Peach(Card::Heart, 12)
-         << new Peach(Card::Diamond, 12);
+         << new Peach(Card::Diamond, 12)
+         << new Crossbow(Card::Club)
+         << new Crossbow(Card::Diamond);
     foreach (Card *card, cards) {
         card->setParent(this);
     }

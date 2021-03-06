@@ -122,5 +122,10 @@ void CardOverview::on_playAudioEffectButton_clicked(){
             QString fileName = G_ROOM_SKIN.getPlayerAudioEffectPath(QString("peach"),QString("default"),-1);
             Sanguosha->playAudioEffect(fileName,false);
         }
+        if(card->getTypeId() == Card::TypeEquip){
+            QString objectName = card->objectName();
+            QString fileName = G_ROOM_SKIN.getPlayerAudioEffectPath(objectName, QString("equip"), -1);
+            Sanguosha->playAudioEffect(fileName,false);
+        }
     }
 }
