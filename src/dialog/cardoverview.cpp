@@ -35,7 +35,7 @@ void CardOverview::loadFromAll(){
         ui->tableWidget->setCurrentItem(ui->tableWidget->item(0 , 0));
 
         const Card *card = Sanguosha->getEngineCard(0);
-        if(card->getTypeId() == Card::TypeEquip){
+        if(card->getTypeId() == Card::TypeEquip || card->getName() == "peach"){
             ui->playAudioEffectButton->show();
             ui->malePlayButton->hide();
             ui->femalePlayButton->hide();
@@ -84,7 +84,7 @@ void CardOverview::on_tableWidget_itemSelectionChanged(){
     QString pixmap_path = QString("image/big-card/%1.png").arg(card->objectName());
     ui->cardLabel->setPixmap(pixmap_path);
     ui->cardDescriptionBox->setText(card->getDescription());
-    if (card->getTypeId() == Card::TypeEquip) {
+    if (card->getTypeId() == Card::TypeEquip || card->getName() == "peach") {
         ui->playAudioEffectButton->show();
         ui->malePlayButton->hide();
         ui->femalePlayButton->hide();
@@ -110,5 +110,17 @@ void CardOverview::on_femalePlayButton_clicked(){
         int card_id = ui->tableWidget->item(row, 0)->data(Qt::UserRole).toInt();
         const Card *card = Sanguosha->getEngineCard(card_id);
         Sanguosha->playAudioEffect(G_ROOM_SKIN.getPlayerAudioEffectPath(card->objectName(), false), false);
+    }
+}
+
+void CardOverview::on_playAudioEffectButton_clicked(){
+    int row = ui->tableWidget->currentRow();
+    if(row >= 0){
+        int card_id = ui->tableWidget->item(row,0)->data(Qt::UserRole).toInt();
+        const Card *card = Sanguosha->getEngineCard(card_id);
+        if(card->getName() == "peach"){
+            QString fileName = G_ROOM_SKIN.getPlayerAudioEffectPath(QString("peach"),QString("default"),-1);
+            Sanguosha->playAudioEffect(fileName,false);
+        }
     }
 }

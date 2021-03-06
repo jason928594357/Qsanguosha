@@ -46,6 +46,27 @@ QString Jink::getPackageName() const {
     return tr("standard card");
 }
 
+Peach::Peach(Card::Suit suit, int number):BasicCard(suit,number){
+    setObjectName("peach");
+}
+
+QString Peach::getSubtype() const{
+    return tr("recover card");
+}
+
+QString Peach::getDescription()const{
+    QString description = tr("<b>【Peach】</b>Basic card<br /><b>Phase</b>:play phase/when a role is on the verge of death<br /><b>Target</b>:have hurt you/thr role on the verge of death<br /><b>Effect</b>:the target role returns to a point blood.");
+    return description;
+}
+
+QString Peach::getCardName() const {
+    return tr("peach");
+}
+
+QString Peach::getPackageName() const {
+    return tr("standard card");
+}
+
 StandardCardPackage::StandardCardPackage()
     : Package("standard card", Package::CardPack){
     QList<Card *> cards;
@@ -93,7 +114,15 @@ StandardCardPackage::StandardCardPackage()
          << new Jink(Card::Diamond, 9)
          << new Jink(Card::Diamond, 10)
          << new Jink(Card::Diamond, 11)
-         << new Jink(Card::Diamond, 11);
+         << new Jink(Card::Diamond, 11)
+         << new Peach(Card::Heart, 3)
+         << new Peach(Card::Heart, 4)
+         << new Peach(Card::Heart, 6)
+         << new Peach(Card::Heart, 7)
+         << new Peach(Card::Heart, 8)
+         << new Peach(Card::Heart, 9)
+         << new Peach(Card::Heart, 12)
+         << new Peach(Card::Diamond, 12);
     foreach (Card *card, cards) {
         card->setParent(this);
     }

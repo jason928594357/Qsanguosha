@@ -193,6 +193,29 @@
     </message>
 </context>
 <context>
+    <name>Peach</name>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="54"/>
+        <source>recover card</source>
+        <translation>恢复牌</translation>
+    </message>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="58"/>
+        <source>&lt;b&gt;【Peach】&lt;/b&gt;Basic card&lt;br /&gt;&lt;b&gt;Phase&lt;/b&gt;:play phase/when a role is on the verge of death&lt;br /&gt;&lt;b&gt;Target&lt;/b&gt;:have hurt you/thr role on the verge of death&lt;br /&gt;&lt;b&gt;Effect&lt;/b&gt;:the target role returns to a point blood.</source>
+        <translation>&lt;b&gt;【桃】&lt;/b&gt;基本牌&lt;br /&gt;&lt;b&gt;时机&lt;/b&gt;：出牌阶段/一名角色处于濒死状态时&lt;br /&gt;&lt;b&gt;目标&lt;/b&gt;：已受伤的你/处于濒死状态的角色&lt;br /&gt;&lt;b&gt;效果&lt;/b&gt;：目标角色回复1点体力。</translation>
+    </message>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="63"/>
+        <source>peach</source>
+        <translation>桃</translation>
+    </message>
+    <message>
+        <location filename="../src/package/standardcards.cpp" line="67"/>
+        <source>standard card</source>
+        <translation>标准版</translation>
+    </message>
+</context>
+<context>
     <name>QSanSelectableItem</name>
     <message>
         <location filename="../src/ui/qsanselectableitem.cpp" line="19"/>

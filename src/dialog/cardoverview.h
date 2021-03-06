@@ -26,6 +26,7 @@ private slots:
     void on_tableWidget_itemSelectionChanged();
     void on_malePlayButton_clicked();
     void on_femalePlayButton_clicked();
+    void on_playAudioEffectButton_clicked();
 };
 
 #endif // CARDOVERVIEW_H

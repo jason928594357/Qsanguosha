@@ -47,4 +47,15 @@ public:
     virtual QString getPackageName() const;
 };
 
+// 桃
+class Peach : public BasicCard{
+    Q_OBJECT
+public:
+    Q_INVOKABLE Peach(Card::Suit suit, int number);
+    virtual QString getSubtype() const;
+    virtual QString getDescription() const;
+    virtual QString getCardName() const;
+    virtual QString getPackageName() const;
+};
+
 #endif // STANDARD_H
