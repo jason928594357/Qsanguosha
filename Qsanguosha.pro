@@ -24,7 +24,10 @@ SOURCES += \
     src/package/standardcards.cpp \
     src/ui/skinbank.cpp \
     src/core/json.cpp \
-    src/dialog/generaloverview.cpp
+    src/dialog/generaloverview.cpp \
+    src/core/general.cpp \
+    src/package/standardgenerals.cpp \
+    src/core/skill.cpp
 
 HEADERS += \
     src/dialog/mainwindow.h \
@@ -43,7 +46,9 @@ HEADERS += \
     src/package/standard.h \
     src/ui/skinbank.h \
     src/core/json.h \
-    src/dialog/generaloverview.h
+    src/dialog/generaloverview.h \
+    src/core/general.h \
+    src/core/skill.h
 
 FORMS += \
     src/dialog/mainwindow.ui \

@@ -9,6 +9,7 @@ class StandardPackage : public Package
     Q_OBJECT
 public:
     StandardPackage();
+    void addGenerals();
 };
 
 // 基本牌

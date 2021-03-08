@@ -36,6 +36,7 @@ class QSanSkinFactory
 {
 public:
     static QSanSkinFactory &getInstance();
+    static void destroyInstance();
     bool switchSkin(QString skinName);
     const QSanSkinScheme &getCurrentSkinScheme();
     QString S_DEFAULT_SKIN_NAME;

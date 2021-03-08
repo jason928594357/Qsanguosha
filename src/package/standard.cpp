@@ -3,6 +3,7 @@
 #include "engine.h"
 
 StandardPackage::StandardPackage():Package("standard"){
+    addGenerals();
     patterns["slash"] = new ExpPattern("Slash");
 }
 
@@ -25,7 +26,6 @@ Card::CardType EquipCard::getTypeId() const {
 Weapon::Weapon(Suit suit,int number,int range)
     :EquipCard(suit,number)
 {
-
 }
 
 QString Weapon::getSubtype()const {

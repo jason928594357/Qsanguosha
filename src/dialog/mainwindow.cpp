@@ -5,6 +5,8 @@
 #include "roomscene.h"
 #include "cardoverview.h"
 #include "generaloverview.h"
+#include "skinbank.h"
+#include "engine.h"
 
 #include <QMessageBox>
 #include <QGraphicsView>
@@ -17,7 +19,7 @@ class FitView : public QGraphicsView
 public:
     FitView(QGraphicsScene *scene) : QGraphicsView(scene) {
         setSceneRect(Config.Rect);
-        setViewport(new QGLWidget(QGLFormat(QGL::SampleBuffers)));
+        setRenderHints(QPainter::TextAntialiasing | QPainter::Antialiasing);
     }
 
 protected:
@@ -31,7 +33,6 @@ protected:
         if(main_window){
             main_window->setBackgroundBrush(true);
         }
-
     }
 };
 
@@ -39,7 +40,6 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-    Config.init();
     qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
     ui->setupUi(this);
     StartScene *start_scene = new StartScene;
@@ -63,8 +63,8 @@ MainWindow::MainWindow(QWidget *parent) :
 }
 
 void MainWindow::restoreFromConfig(){
-    resize(Config.value("WindowSize").toSize());
-    move(Config.value("WindowPosition").toPoint());
+    resize(Config.value("WindowSize", QSize(1366, 706)).toSize());
+    move(Config.value("WindowPosition", QPoint(-8, -8)).toPoint());
 }
 
 void MainWindow::closeEvent(QCloseEvent *)
@@ -81,6 +81,7 @@ MainWindow::~MainWindow()
     if(scene){
         scene->deleteLater();
     }
+    QSanSkinFactory::destroyInstance();
 }
 
 void MainWindow::on_actionExit_triggered(){
@@ -113,6 +114,7 @@ void MainWindow::setBackgroundBrush(bool centerAsOrigin)
 
 void MainWindow::on_actionGeneral_Overview_triggered(){
     GeneralOverview *overview = GeneralOverview::getInstance(this);
+    overview->fillGenrals(Sanguosha->getAllGenerals());
     overview->show();
 }
 

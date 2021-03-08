@@ -15,7 +15,6 @@ Settings::Settings()
 
 
 void Settings::init(){
-
     QString font_path = value("DefaultFontPath", "font/simli.ttf").toString();
     int font_id = QFontDatabase::addApplicationFont(font_path);
     if(font_id!=-1){

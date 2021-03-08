@@ -44,6 +44,13 @@ QSanSkinFactory &QSanSkinFactory::getInstance(){
     return *_sm_singleton;
 }
 
+void QSanSkinFactory::destroyInstance(){
+    if(_sm_singleton){
+        delete _sm_singleton;
+        _sm_singleton = NULL;
+    }
+}
+
 QSanSkinFactory::QSanSkinFactory(const char *fileName){
     bool use_full = Config.value("useFullSkin",true).toBool();
     QString suf = use_full ? "full" : QString();

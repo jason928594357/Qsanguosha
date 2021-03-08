@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
     QTranslator translator;
     translator.load("sanguosha.qm");
     qApp->installTranslator(&translator);
+    Config.init();
     Audio::init();
     MainWindow *main_window = new MainWindow;
     main_window->show();

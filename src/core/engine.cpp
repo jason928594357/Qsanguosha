@@ -6,7 +6,7 @@ Engine *Sanguosha = NULL;
 
 Engine::Engine(){
     Sanguosha = this;
-    QStringList package_names = QStringList()<<"StandardCard";
+    QStringList package_names = QStringList()<<"StandardCard"<<"Standard";
     foreach (QString name, package_names) {
         addPackage(name);
     }
@@ -31,6 +31,12 @@ void Engine::addPackage(Package *package){
     foreach(Card *card, all_cards){
         card->setId(cards.length());
         cards << card;
+    }
+
+    QList<General *> all_generals = package->findChildren<General *>();
+
+    foreach(General *general,all_generals){
+        generals.insert(general->objectName(),general);
     }
 }
 
